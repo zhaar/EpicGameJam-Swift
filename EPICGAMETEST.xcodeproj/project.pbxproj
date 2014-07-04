@@ -38,6 +38,7 @@
 		95F693E31967101D00EA05B4 /* EPICGAMETESTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPICGAMETESTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F693E81967101D00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693E91967101D00EA05B4 /* EPICGAMETESTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICGAMETESTTests.swift; sourceTree = "<group>"; };
+		95F693F31967109300EA05B4 /* prototyping.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = prototyping.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				95F693D21967101C00EA05B4 /* AppDelegate.swift */,
+				95F693F31967109300EA05B4 /* prototyping.playground */,
 				95F693D41967101C00EA05B4 /* GameScene.sks */,
 				95F693D61967101C00EA05B4 /* GameScene.swift */,
 				95F693D81967101C00EA05B4 /* GameViewController.swift */,
