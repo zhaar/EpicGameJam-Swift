@@ -9,20 +9,22 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    
-    let ship = initShip(image:"/Users/zephyz/Documents/Projects/iOS/EPICGAMETEST/carrier.png", scene: self)
+    // func createShip(image: String, scene: SKScene) -> Ship {
+
+
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        self.userInteractionEnabled = true
+        //let ship = createShip("carrier", self)
+        
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!";
         myLabel.fontSize = 65;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 
-        self.size.width = 320
-        self.size.height = 586
         self.addChild(myLabel)
+        
+        //self.userInteractionEnabled = true
 }
     
     
