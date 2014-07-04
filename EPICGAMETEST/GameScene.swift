@@ -9,6 +9,9 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
+    let ship = initShip(image:"/Users/zephyz/Documents/Projects/iOS/EPICGAMETEST/carrier.png", scene: self)
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.userInteractionEnabled = true
@@ -16,27 +19,24 @@ class GameScene: SKScene {
         myLabel.text = "Hello, World!";
         myLabel.fontSize = 65;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
+
+        self.size.width = 320
+        self.size.height = 586
         self.addChild(myLabel)
-    }
+}
+    
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            let sprite = SKSpriteNode(imageNamed:"Screen Shot 2014-07-04 at 21.24.46")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = CGPoint(x:200, y:200)
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-           
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+//        
+//        for touch: AnyObject in touches {
+//            print(event.description)
+//           
+//        }
+    }
+    
+    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+        print(event.description)
     }
    
     override func update(currentTime: CFTimeInterval) {
