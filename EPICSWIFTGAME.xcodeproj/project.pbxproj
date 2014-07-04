@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		95F693CD1967101C00EA05B4 /* EPICGAMETEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICGAMETEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F693D11967101C00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693D21967101C00EA05B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F693D41967101C00EA05B4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 		95F693D81967101C00EA05B4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		95F693DB1967101C00EA05B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95F693DD1967101C00EA05B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		95F693E31967101D00EA05B4 /* EPICGAMETESTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPICGAMETESTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F693E31967101D00EA05B4 /* EPICSWIFTGAMETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPICSWIFTGAMETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F693E81967101D00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693E91967101D00EA05B4 /* EPICGAMETESTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICGAMETESTTests.swift; sourceTree = "<group>"; };
 		95F693F31967109300EA05B4 /* prototyping.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = prototyping.playground; sourceTree = "<group>"; };
@@ -71,8 +71,8 @@
 		95F693CE1967101C00EA05B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95F693CD1967101C00EA05B4 /* EPICGAMETEST.app */,
-				95F693E31967101D00EA05B4 /* EPICGAMETESTTests.xctest */,
+				95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */,
+				95F693E31967101D00EA05B4 /* EPICSWIFTGAMETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,9 +120,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95F693CC1967101C00EA05B4 /* EPICGAMETEST */ = {
+		95F693CC1967101C00EA05B4 /* EPICSWIFTGAME */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95F693ED1967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICGAMETEST" */;
+			buildConfigurationList = 95F693ED1967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICSWIFTGAME" */;
 			buildPhases = (
 				95F693C91967101C00EA05B4 /* Sources */,
 				95F693CA1967101C00EA05B4 /* Frameworks */,
@@ -132,14 +132,14 @@
 			);
 			dependencies = (
 			);
-			name = EPICGAMETEST;
+			name = EPICSWIFTGAME;
 			productName = EPICGAMETEST;
-			productReference = 95F693CD1967101C00EA05B4 /* EPICGAMETEST.app */;
+			productReference = 95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95F693E21967101D00EA05B4 /* EPICGAMETESTTests */ = {
+		95F693E21967101D00EA05B4 /* EPICSWIFTGAMETests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95F693F01967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICGAMETESTTests" */;
+			buildConfigurationList = 95F693F01967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICSWIFTGAMETests" */;
 			buildPhases = (
 				95F693DF1967101D00EA05B4 /* Sources */,
 				95F693E01967101D00EA05B4 /* Frameworks */,
@@ -150,9 +150,9 @@
 			dependencies = (
 				95F693E51967101D00EA05B4 /* PBXTargetDependency */,
 			);
-			name = EPICGAMETESTTests;
+			name = EPICSWIFTGAMETests;
 			productName = EPICGAMETESTTests;
-			productReference = 95F693E31967101D00EA05B4 /* EPICGAMETESTTests.xctest */;
+			productReference = 95F693E31967101D00EA05B4 /* EPICSWIFTGAMETests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -173,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 95F693C81967101C00EA05B4 /* Build configuration list for PBXProject "EPICGAMETEST" */;
+			buildConfigurationList = 95F693C81967101C00EA05B4 /* Build configuration list for PBXProject "EPICSWIFTGAME" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -186,8 +186,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95F693CC1967101C00EA05B4 /* EPICGAMETEST */,
-				95F693E21967101D00EA05B4 /* EPICGAMETESTTests */,
+				95F693CC1967101C00EA05B4 /* EPICSWIFTGAME */,
+				95F693E21967101D00EA05B4 /* EPICSWIFTGAMETests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,7 +236,7 @@
 /* Begin PBXTargetDependency section */
 		95F693E51967101D00EA05B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95F693CC1967101C00EA05B4 /* EPICGAMETEST */;
+			target = 95F693CC1967101C00EA05B4 /* EPICSWIFTGAME */;
 			targetProxy = 95F693E41967101D00EA05B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -339,7 +339,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EPICGAMETEST/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EPICSWIFTGAME;
 			};
 			name = Debug;
 		};
@@ -350,7 +350,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EPICGAMETEST/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EPICSWIFTGAME;
 			};
 			name = Release;
 		};
@@ -369,7 +369,7 @@
 				INFOPLIST_FILE = EPICGAMETESTTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EPICSWIFTGAMETests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -385,7 +385,7 @@
 				INFOPLIST_FILE = EPICGAMETESTTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EPICSWIFTGAMETests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95F693C81967101C00EA05B4 /* Build configuration list for PBXProject "EPICGAMETEST" */ = {
+		95F693C81967101C00EA05B4 /* Build configuration list for PBXProject "EPICSWIFTGAME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95F693EB1967101D00EA05B4 /* Debug */,
@@ -402,21 +402,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95F693ED1967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICGAMETEST" */ = {
+		95F693ED1967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICSWIFTGAME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95F693EE1967101D00EA05B4 /* Debug */,
 				95F693EF1967101D00EA05B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		95F693F01967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICGAMETESTTests" */ = {
+		95F693F01967101D00EA05B4 /* Build configuration list for PBXNativeTarget "EPICSWIFTGAMETests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95F693F11967101D00EA05B4 /* Debug */,
 				95F693F21967101D00EA05B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

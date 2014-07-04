@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95F693CC1967101C00EA05B4"
-               BuildableName = "EPICGAMETEST.app"
-               BlueprintName = "EPICGAMETEST"
-               ReferencedContainer = "container:EPICGAMETEST.xcodeproj">
+               BuildableName = "EPICSWIFTGAME.app"
+               BlueprintName = "EPICSWIFTGAME"
+               ReferencedContainer = "container:EPICSWIFTGAME.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95F693E21967101D00EA05B4"
-               BuildableName = "EPICGAMETESTTests.xctest"
-               BlueprintName = "EPICGAMETESTTests"
-               ReferencedContainer = "container:EPICGAMETEST.xcodeproj">
+               BuildableName = "EPICSWIFTGAMETests.xctest"
+               BlueprintName = "EPICSWIFTGAMETests"
+               ReferencedContainer = "container:EPICSWIFTGAME.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95F693CC1967101C00EA05B4"
-            BuildableName = "EPICGAMETEST.app"
-            BlueprintName = "EPICGAMETEST"
-            ReferencedContainer = "container:EPICGAMETEST.xcodeproj">
+            BuildableName = "EPICSWIFTGAME.app"
+            BlueprintName = "EPICSWIFTGAME"
+            ReferencedContainer = "container:EPICSWIFTGAME.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95F693CC1967101C00EA05B4"
-            BuildableName = "EPICGAMETEST.app"
-            BlueprintName = "EPICGAMETEST"
-            ReferencedContainer = "container:EPICGAMETEST.xcodeproj">
+            BuildableName = "EPICSWIFTGAME.app"
+            BlueprintName = "EPICSWIFTGAME"
+            ReferencedContainer = "container:EPICSWIFTGAME.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95F693CC1967101C00EA05B4"
-            BuildableName = "EPICGAMETEST.app"
-            BlueprintName = "EPICGAMETEST"
-            ReferencedContainer = "container:EPICGAMETEST.xcodeproj">
+            BuildableName = "EPICSWIFTGAME.app"
+            BlueprintName = "EPICSWIFTGAME"
+            ReferencedContainer = "container:EPICSWIFTGAME.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
