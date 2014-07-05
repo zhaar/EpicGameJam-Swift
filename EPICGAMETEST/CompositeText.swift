@@ -46,6 +46,10 @@ class CompositeText: SKNode{
             SKAction.runBlock({self.displayNext(duration);
                 self.displayAll(timeOffset, duration: duration)})]))
     }
+    
+    func progress() -> Float{
+        return Float(self.currentIndex)/Float(labels.endIndex)
+    }
 
 }
 

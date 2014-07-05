@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var introScene = IntroScene.sceneWithSize(self.view.frame.size)
+        var introScene = makeIntroScene(view.frame.size)
         var skView = self.view as SKView        
         skView.presentScene(introScene)
 

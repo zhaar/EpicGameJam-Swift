@@ -44,7 +44,7 @@
 		95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F693DD1967101C00EA05B4 /* Images.xcassets */; };
 		95F693EA1967101D00EA05B4 /* EPICGAMETESTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693E91967101D00EA05B4 /* EPICGAMETESTTests.swift */; };
 		95FAE0A6196887D70083B21B /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0A5196887D70083B21B /* functions.swift */; };
-		95FAE0A8196887FC0083B21B /* script1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0A7196887FC0083B21B /* script1.txt */; };
+		95FAE0A8196887FC0083B21B /* script_intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0A7196887FC0083B21B /* script_intro.txt */; };
 		95FAE0AA19688C9B0083B21B /* CompositeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0A919688C9B0083B21B /* CompositeText.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 		95F693E81967101D00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693E91967101D00EA05B4 /* EPICGAMETESTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICGAMETESTTests.swift; sourceTree = "<group>"; };
 		95FAE0A5196887D70083B21B /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
-		95FAE0A7196887FC0083B21B /* script1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script1.txt; sourceTree = "<group>"; };
+		95FAE0A7196887FC0083B21B /* script_intro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script_intro.txt; sourceTree = "<group>"; };
 		95FAE0A919688C9B0083B21B /* CompositeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 		845659101967FA1E001E0CF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				95FAE0A7196887FC0083B21B /* script1.txt */,
+				95FAE0A7196887FC0083B21B /* script_intro.txt */,
 				84F88B4A1968483400BE41D8 /* Sounds */,
 				84F88B3A1968411C00BE41D8 /* laser.wav */,
 				84F88B3C196847DB00BE41D8 /* laser.aiff */,
@@ -348,7 +348,7 @@
 				84F88B701968663000BE41D8 /* spark.png in Resources */,
 				84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */,
 				84F88B60196859FC00BE41D8 /* dead1@2x.png in Resources */,
-				95FAE0A8196887FC0083B21B /* script1.txt in Resources */,
+				95FAE0A8196887FC0083B21B /* script_intro.txt in Resources */,
 				84F88B5C196859D800BE41D8 /* monster7@2x.png in Resources */,
 				84F88B62196859FC00BE41D8 /* dead3@2x.png in Resources */,
 				84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */,
