@@ -8,7 +8,22 @@
 
 import SpriteKit
 
+@infix func - (left: CGPoint, right: CGPoint) -> CGPoint {
+    return CGPointMake(left.x - right.x,
+        left.y - right.y)
+}
+
+@infix func + (left: CGPoint, right: CGPoint) -> CGPoint {
+    return CGPointMake(left.x + right.x,
+        left.y + right.y)
+}
+
 class GameScene: SKScene {
+    
+    var firstTouch: CGPoint?
+    var originalPosition: CGPoint?
+    
+    func ship() -> SKNode { return self.childNodeWithName("ship")}
     
     override func didMoveToView(view: SKView) {
         let ship = createShip("carrier", self)
@@ -17,10 +32,9 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        println("Touch happened")
-        
         var touch : UITouch! =  touches.anyObject() as UITouch;
-        self.childNodeWithName("ship").position = touch.locationInNode(self)
+        firstTouch = touch.locationInNode(self)
+        originalPosition = ship().position
         
         //CGPoint location = touch.locationInView(self.view)
         //self.childNodeWithName("ship").position = location
@@ -28,7 +42,13 @@ class GameScene: SKScene {
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
         //print(event.description)
+        var touch : UITouch! =  touches.anyObject() as UITouch;
         
+        var diff = touch.locationInNode(self) - firstTouch! 
+        
+        println("difference: \(diff)")
+        
+        self.childNodeWithName("ship").position = diff + originalPosition!
         
         
     }
