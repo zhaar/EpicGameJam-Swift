@@ -30,7 +30,7 @@ class Ship: SKSpriteNode {
         laserSprite = Laser(imageNamed: "laser")
         laserSprite.anchorPoint = CGPointMake(0.5, 0.0)
         laserSprite.position = CGPointMake(self.size.width * 0.5, 0.0)
-        laserSprite.yScale *= scene.size.height * 2
+        laserSprite.size.height = scene.size.height * 2
         laserSprite.zRotation = -Float(M_PI_2)
         println("scene height \(scene.size.height * 2)")
         self.addChild(laserSprite)
