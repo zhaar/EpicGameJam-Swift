@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 
+
 protocol EnemyDelegate {
     func enemyDidExplode(sender: Enemy)
 }
@@ -18,14 +19,14 @@ class Enemy : SKSpriteNode {
     var delegate : EnemyDelegate?
     var hitPoints:Int = 20
 
-//    init(name: String, maxHitPoints:Int){
-//        hitPoints = maxHitPoints
-//        super.init(imageNamed: name)
-//    }
     
     func hit(){
         hitPoints = hitPoints - 1
-        if hitPoints < 0 {
+        
+        if (hitPoints > 0) {
+            gotHit()
+        } else if ( hitPoints == 0)
+        {
             explode()
         }
     }
@@ -60,5 +61,15 @@ class Enemy : SKSpriteNode {
 func makeSquidEnemy() -> Enemy {
     let e = Enemy(imageNamed: "monster2")
     e.hitPoints = 10
+    
+    e.physicsBody = SKPhysicsBody(rectangleOfSize: e.size)
+    
+    e.physicsBody.categoryBitMask = monsterCategory
+    e.physicsBody.collisionBitMask = 0
+    e.physicsBody.contactTestBitMask = missileCategory
+    
+    e.xScale = 0.4;
+    e.yScale = 0.4;
+    
     return e
 }
