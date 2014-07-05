@@ -39,25 +39,18 @@ class CompositeText: SKNode{
         }else{ return false }
     }
     
-    func displayAll(timeOffset: NSTimeInterval, duration: NSTimeInterval){
-        println("displaying line \(labels[currentIndex])")
-        self.runAction(SKAction.sequence([
-            SKAction.waitForDuration(timeOffset),
-            SKAction.runBlock({self.displayNext(duration);
-                self.displayAll(timeOffset, duration: duration)})]))
-    }
+//    func displayAll(timeOffset: NSTimeInterval, duration: NSTimeInterval){
+//        println("displaying line \(labels[currentIndex])")
+//        self.runAction(SKAction.sequence([
+//            SKAction.waitForDuration(timeOffset),
+//            SKAction.runBlock({self.displayNext(duration);
+//                self.displayAll(timeOffset, duration: duration)})]))
+//    }
     
     func progress() -> Float{
         return Float(self.currentIndex)/Float(labels.endIndex)
     }
 
-}
-
-func counter(initialCount: Int, limit: Int, sideEffect: (Int) -> ()) -> () -> (){
-    var c = 0
-    return {
-        if c < limit {sideEffect(c++)}
-    }
 }
 
 func labelMaker(fontSize: Int, fontName: String, yOffset:Int, startPosition: Int, scene:SKScene) -> (text:String) -> SKLabelNode{

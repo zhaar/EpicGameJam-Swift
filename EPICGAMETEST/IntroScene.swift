@@ -45,7 +45,6 @@ let introText = "The dawn of our civilisation is upon us."
 //}
 
 
-
 class TextScene: SKScene {
     
     var labels: CompositeText!
@@ -67,14 +66,20 @@ class TextScene: SKScene {
     override func didMoveToView(view: SKView!) {
         let lines = loadText(textName)!
         labels = CompositeText(lines: lines, scene: self)
-        labels.displayNext(1)
-
+        
         self.addChild(bgSprite)
         bgSprite.runAction(SKAction.sequence(
             [SKAction.fadeAlphaTo(1, duration: fadeInDuration),
                 SKAction.waitForDuration(displayDuration),
+                SKAction.runBlock(
+                    {println("running block");
+                        self.labels.displayNext(1)}
+                ),
                 SKAction.fadeAlphaTo(0, duration: 10)
             ]))
+//        self.runAction(SKAction.sequence([
+//            SKAction.waitForDuration(animationDuration),
+//            SKAction.runBlock({self.labels.displayNext(1)})]))
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
