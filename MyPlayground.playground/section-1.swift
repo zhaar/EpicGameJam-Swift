@@ -6,6 +6,7 @@ let view:SKView = SKView(frame: CGRectMake(0, 0, 320, 586))
 
 XCPShowView("Live view", view)
 
+
 class Ship: SKSpriteNode {
 
 }

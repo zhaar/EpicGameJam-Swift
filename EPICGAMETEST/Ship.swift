@@ -12,20 +12,38 @@ let PI = 3.1415926535
 
 class Ship: SKSpriteNode {
     
+    // ------ Physics ------
+    
+    let missileCategory: UInt32 = 1 << 0
+    let shipCategory:    UInt32 = 1 << 1
+    let monsterCategory: UInt32 = 1 << 2
+    
     var isShooting = false
     let laserSprite:SKSpriteNode = SKSpriteNode(imageNamed: "laser")
-    
     
     func startShooting() {
         isShooting = true
 
         laserSprite.yScale = 200
-        self.addChild(laserSprite)
+        //self.addChild(laserSprite)
     }
     
     func stopShooting(){
         isShooting = false
+    }
+    
+    func shootMissile() {
+        var missileSprite = SKSpriteNode(imageNamed: "laser_munition")
+        missileSprite.position = self.position
+        self.scene.addChild(missileSprite)
         
+        missileSprite.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(missileSprite.size.width, missileSprite.size.height))
+
+        missileSprite.physicsBody.categoryBitMask = missileCategory
+        missileSprite.physicsBody.collisionBitMask = monsterCategory
+        missileSprite.physicsBody.contactTestBitMask = monsterCategory
+        
+        missileSprite.physicsBody.applyImpulse(CGVectorMake(0, 50))
     }
 }
 

@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		845659121967FA29001E0CF6 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659111967FA29001E0CF6 /* laser.png */; };
 		845659141967FFB2001E0CF6 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659131967FFB2001E0CF6 /* Laser.swift */; };
+		845659211968061E001E0CF6 /* dead1.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659151968061E001E0CF6 /* dead1.png */; };
+		845659221968061E001E0CF6 /* dead2.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659161968061E001E0CF6 /* dead2.png */; };
+		845659231968061E001E0CF6 /* dead3.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659171968061E001E0CF6 /* dead3.png */; };
+		845659241968061E001E0CF6 /* laser_munition.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659181968061E001E0CF6 /* laser_munition.png */; };
+		845659251968061E001E0CF6 /* laser_weapon.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659191968061E001E0CF6 /* laser_weapon.png */; };
+		845659261968061E001E0CF6 /* monster1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8456591A1968061E001E0CF6 /* monster1.png */; };
+		845659271968061E001E0CF6 /* monster2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8456591B1968061E001E0CF6 /* monster2.png */; };
+		845659281968061E001E0CF6 /* monster3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8456591C1968061E001E0CF6 /* monster3.png */; };
+		845659291968061E001E0CF6 /* monster4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8456591D1968061E001E0CF6 /* monster4.png */; };
+		8456592A1968061E001E0CF6 /* monster5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8456591E1968061E001E0CF6 /* monster5.png */; };
+		8456592B1968061E001E0CF6 /* monster6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8456591F1968061E001E0CF6 /* monster6.png */; };
+		8456592C1968061E001E0CF6 /* monster7.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659201968061E001E0CF6 /* monster7.png */; };
 		955003D019675B4C00743A4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955003CF19675B4C00743A4A /* Ship.swift */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
@@ -32,6 +44,19 @@
 /* Begin PBXFileReference section */
 		845659111967FA29001E0CF6 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
 		845659131967FFB2001E0CF6 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
+		845659151968061E001E0CF6 /* dead1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dead1.png; sourceTree = "<group>"; };
+		845659161968061E001E0CF6 /* dead2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dead2.png; sourceTree = "<group>"; };
+		845659171968061E001E0CF6 /* dead3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dead3.png; sourceTree = "<group>"; };
+		845659181968061E001E0CF6 /* laser_munition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_munition.png; sourceTree = "<group>"; };
+		845659191968061E001E0CF6 /* laser_weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_weapon.png; sourceTree = "<group>"; };
+		8456591A1968061E001E0CF6 /* monster1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster1.png; sourceTree = "<group>"; };
+		8456591B1968061E001E0CF6 /* monster2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster2.png; sourceTree = "<group>"; };
+		8456591C1968061E001E0CF6 /* monster3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster3.png; sourceTree = "<group>"; };
+		8456591D1968061E001E0CF6 /* monster4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster4.png; sourceTree = "<group>"; };
+		8456591E1968061E001E0CF6 /* monster5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster5.png; sourceTree = "<group>"; };
+		8456591F1968061E001E0CF6 /* monster6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster6.png; sourceTree = "<group>"; };
+		845659201968061E001E0CF6 /* monster7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster7.png; sourceTree = "<group>"; };
+		8456592D19681ECB001E0CF6 /* SwiftCodeTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftCodeTests.playground; sourceTree = "<group>"; };
 		955003B619674D7B00743A4A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		955003CF19675B4C00743A4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +93,18 @@
 		845659101967FA1E001E0CF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				845659151968061E001E0CF6 /* dead1.png */,
+				845659161968061E001E0CF6 /* dead2.png */,
+				845659171968061E001E0CF6 /* dead3.png */,
+				845659181968061E001E0CF6 /* laser_munition.png */,
+				845659191968061E001E0CF6 /* laser_weapon.png */,
+				8456591A1968061E001E0CF6 /* monster1.png */,
+				8456591B1968061E001E0CF6 /* monster2.png */,
+				8456591C1968061E001E0CF6 /* monster3.png */,
+				8456591D1968061E001E0CF6 /* monster4.png */,
+				8456591E1968061E001E0CF6 /* monster5.png */,
+				8456591F1968061E001E0CF6 /* monster6.png */,
+				845659201968061E001E0CF6 /* monster7.png */,
 				845659111967FA29001E0CF6 /* laser.png */,
 			);
 			name = Resources;
@@ -105,6 +142,7 @@
 				95F693DD1967101C00EA05B4 /* Images.xcassets */,
 				95F693D01967101C00EA05B4 /* Supporting Files */,
 				845659131967FFB2001E0CF6 /* Laser.swift */,
+				8456592D19681ECB001E0CF6 /* SwiftCodeTests.playground */,
 			);
 			path = EPICGAMETEST;
 			sourceTree = "<group>";
@@ -216,8 +254,20 @@
 			files = (
 				95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */,
 				95F693D51967101C00EA05B4 /* GameScene.sks in Resources */,
+				845659261968061E001E0CF6 /* monster1.png in Resources */,
+				845659251968061E001E0CF6 /* laser_weapon.png in Resources */,
 				95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */,
+				845659231968061E001E0CF6 /* dead3.png in Resources */,
 				845659121967FA29001E0CF6 /* laser.png in Resources */,
+				8456592B1968061E001E0CF6 /* monster6.png in Resources */,
+				845659221968061E001E0CF6 /* dead2.png in Resources */,
+				845659241968061E001E0CF6 /* laser_munition.png in Resources */,
+				845659271968061E001E0CF6 /* monster2.png in Resources */,
+				845659281968061E001E0CF6 /* monster3.png in Resources */,
+				845659211968061E001E0CF6 /* dead1.png in Resources */,
+				8456592A1968061E001E0CF6 /* monster5.png in Resources */,
+				8456592C1968061E001E0CF6 /* monster7.png in Resources */,
+				845659291968061E001E0CF6 /* monster4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +411,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = EPICSWIFTGAME;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,6 +424,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = EPICSWIFTGAME;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
