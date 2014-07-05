@@ -31,7 +31,6 @@ class Ship: SKSpriteNode {
         laserSprite.anchorPoint = CGPointMake(0.5, 0.0)
         laserSprite.position = CGPointMake(self.size.width * 0.5, 0.0)
         laserSprite.size.height = scene.size.height * 2
-        laserSprite.zRotation = -Float(M_PI_2)
         println("scene height \(scene.size.height * 2)")
         self.addChild(laserSprite)
     }
@@ -45,9 +44,8 @@ func getSceneCenter(scene : SKScene) -> CGPoint {
 func createShip(image: String) -> Ship {
     let ship = Ship(imageNamed: image)
     ship.anchorPoint = CGPoint(x:0.5, y:0.5)
-    ship.xScale = 0.15
-    ship.yScale = 0.15
-    ship.zRotation = CGFloat(PI * 0.5)
+    ship.xScale = 0.36
+    ship.yScale = 0.36
     return ship
 }
 

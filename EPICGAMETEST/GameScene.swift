@@ -23,7 +23,7 @@ class GameScene: SKScene {
     
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
-    let ship: Ship = createShip("cruiser")
+    let ship: Ship = createShip("destroyer")
     
     //func ship() -> SKNode { return self.childNodeWithName("ship")}
     

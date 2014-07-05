@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		845659141967FFB2001E0CF6 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659131967FFB2001E0CF6 /* Laser.swift */; };
-		9521586F19681386009EBF9C /* halflaser.png in Resources */ = {isa = PBXBuildFile; fileRef = 9521586E19681386009EBF9C /* halflaser.png */; };
 		9521587119681471009EBF9C /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 9521587019681471009EBF9C /* laser.png */; };
+		95215873196815F6009EBF9C /* destroyer.png in Resources */ = {isa = PBXBuildFile; fileRef = 95215872196815F6009EBF9C /* destroyer.png */; };
 		955003D019675B4C00743A4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955003CF19675B4C00743A4A /* Ship.swift */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
@@ -32,8 +32,8 @@
 
 /* Begin PBXFileReference section */
 		845659131967FFB2001E0CF6 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
-		9521586E19681386009EBF9C /* halflaser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = halflaser.png; sourceTree = "<group>"; };
 		9521587019681471009EBF9C /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
+		95215872196815F6009EBF9C /* destroyer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destroyer.png; sourceTree = "<group>"; };
 		955003B619674D7B00743A4A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		955003CF19675B4C00743A4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				9521587019681471009EBF9C /* laser.png */,
-				9521586E19681386009EBF9C /* halflaser.png */,
+				95215872196815F6009EBF9C /* destroyer.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 		95F693C41967101C00EA05B4 = {
 			isa = PBXGroup;
 			children = (
-				95F693CF1967101C00EA05B4 /* EPICGAMETEST */,
+				95F693CF1967101C00EA05B4 /* EPICSWIFTGAME */,
 				95F693E61967101D00EA05B4 /* EPICGAMETESTTests */,
 				95F693CE1967101C00EA05B4 /* Products */,
 			);
@@ -94,7 +94,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95F693CF1967101C00EA05B4 /* EPICGAMETEST */ = {
+		95F693CF1967101C00EA05B4 /* EPICSWIFTGAME */ = {
 			isa = PBXGroup;
 			children = (
 				845659101967FA1E001E0CF6 /* Resources */,
@@ -109,6 +109,7 @@
 				95F693DD1967101C00EA05B4 /* Images.xcassets */,
 				95F693D01967101C00EA05B4 /* Supporting Files */,
 			);
+			name = EPICSWIFTGAME;
 			path = EPICGAMETEST;
 			sourceTree = "<group>";
 		};
@@ -218,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */,
-				9521586F19681386009EBF9C /* halflaser.png in Resources */,
+				95215873196815F6009EBF9C /* destroyer.png in Resources */,
 				95F693D51967101C00EA05B4 /* GameScene.sks in Resources */,
 				95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */,
 				9521587119681471009EBF9C /* laser.png in Resources */,
