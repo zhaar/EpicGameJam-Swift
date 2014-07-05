@@ -11,12 +11,17 @@ import SpriteKit
 
 let fadeInDuration = NSTimeInterval(3)
 let displayDuration = NSTimeInterval(1)
+var animationDuration = fadeInDuration + displayDuration
 let introText = "The dawn of our civilisation is upon us."
+
 
 class IntroScene: SKScene {
     func gotoGame(){
         self.view.presentScene(GameScene())
     }
+    
+    var time = NSTimeInterval(0)
+    var labels: CompositeText!
 
     override func didMoveToView(view: SKView!) {
         
@@ -29,22 +34,16 @@ class IntroScene: SKScene {
         bg.runAction(SKAction.sequence(
             [SKAction.fadeAlphaTo(1, duration: fadeInDuration),
             SKAction.waitForDuration(displayDuration),
-            SKAction.fadeAlphaTo(0.5, duration: 2)]))
-//        bg.runAction(SKAction.waitForDuration(2))
-//        bg.runAction(SKAction.fadeAlphaTo(0.5, duration: 2))
+            SKAction.fadeAlphaTo(0.0, duration: 10)]))
         
         
-        let lines = loadText("script1").?.componentsSeparatedByString("\n")
+        let lines = loadText("script1")!
 
-        let labels = CompositeText(lines, self)
-        firstLine.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.9)
-        firstLine.fontSize = 15
-        firstLine.alpha = 0
-        firstLine.runAction(SKAction.sequence([
-            SKAction.waitForDuration(fadeInDuration + displayDuration),
-            SKAction.fadeAlphaTo(1, duration: 2)]))
-        firstLine.fontName = "Courier"
-        self.addChild(firstLine)
+        labels = CompositeText(lines: lines, scene: self)
+        labels.displayNext(1)
     }
-
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        labels.displayNext(1)
+    }
 }

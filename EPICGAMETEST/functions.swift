@@ -9,7 +9,12 @@
 import Foundation
 
 
-func loadText(fileName: String) -> String? {
+func loadText(fileName: String) -> String[]? {
     let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
-    return String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: nil)
+    var maybe = String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: nil)
+    var arr:String[]?
+    if let content = maybe {
+        arr = content.componentsSeparatedByString("\n")
+    }
+    return arr
 }
