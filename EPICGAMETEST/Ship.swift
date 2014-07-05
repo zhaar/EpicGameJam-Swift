@@ -12,8 +12,6 @@ let PI = 3.1415926535
 
 class Ship: SKSpriteNode {
     
-    
-    
 }
 
 func getSceneCenter(scene : SKScene) -> CGPoint {
