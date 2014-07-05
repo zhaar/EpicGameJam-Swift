@@ -15,6 +15,7 @@
 		954F4CAC196826B50028CDF6 /* background_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 954F4CAA196826B50028CDF6 /* background_intro@2x.png */; };
 		954F4CAF1968401F0028CDF6 /* CompositeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F4CAE1968401F0028CDF6 /* CompositeText.swift */; };
 		954F4CB1196846B50028CDF6 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F4CB0196846B50028CDF6 /* functions.swift */; };
+		954F4CB3196847410028CDF6 /* script1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 954F4CB2196847410028CDF6 /* script1.txt */; };
 		955003D019675B4C00743A4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955003CF19675B4C00743A4A /* Ship.swift */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
@@ -44,6 +45,7 @@
 		954F4CAA196826B50028CDF6 /* background_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_intro@2x.png"; sourceTree = "<group>"; };
 		954F4CAE1968401F0028CDF6 /* CompositeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeText.swift; sourceTree = "<group>"; };
 		954F4CB0196846B50028CDF6 /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		954F4CB2196847410028CDF6 /* script1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script1.txt; sourceTree = "<group>"; };
 		955003B619674D7B00743A4A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		955003CF19675B4C00743A4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				954F4CAA196826B50028CDF6 /* background_intro@2x.png */,
 				9521587019681471009EBF9C /* laser.png */,
 				95215872196815F6009EBF9C /* destroyer.png */,
+				954F4CB2196847410028CDF6 /* script1.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				95215873196815F6009EBF9C /* destroyer.png in Resources */,
 				95F693D51967101C00EA05B4 /* GameScene.sks in Resources */,
 				954F4CAC196826B50028CDF6 /* background_intro@2x.png in Resources */,
+				954F4CB3196847410028CDF6 /* script1.txt in Resources */,
 				95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */,
 				9521587119681471009EBF9C /* laser.png in Resources */,
 			);

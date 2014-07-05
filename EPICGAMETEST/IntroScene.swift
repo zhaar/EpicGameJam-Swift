@@ -20,7 +20,6 @@ class IntroScene: SKScene {
 
     override func didMoveToView(view: SKView!) {
         
-        println()
         let bg = SKSpriteNode(imageNamed: "background_intro")
         bg.anchorPoint = CGPointZero
         bg.position = CGPointZero
@@ -34,7 +33,10 @@ class IntroScene: SKScene {
 //        bg.runAction(SKAction.waitForDuration(2))
 //        bg.runAction(SKAction.fadeAlphaTo(0.5, duration: 2))
         
-        let firstLine = SKLabelNode(text: "hello")
+        
+        let lines = loadText("script1").?.componentsSeparatedByString("\n")
+
+        let labels = CompositeText(lines, self)
         firstLine.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.9)
         firstLine.fontSize = 15
         firstLine.alpha = 0
