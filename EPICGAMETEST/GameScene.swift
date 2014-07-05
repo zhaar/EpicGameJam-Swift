@@ -8,6 +8,8 @@
 
 import SpriteKit
 import Foundation
+import AVFoundation
+import AudioToolbox
 
 @infix func - (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPointMake(left.x - right.x,
@@ -25,6 +27,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
     let ship: Ship = createShip("cruiser")
+    let audioPlayer:AVAudioPlayer
+    
+    init(size: CGSize){
+        var backgroundMusicUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "mp3"))
+        audioPlayer = AVAudioPlayer(contentsOfURL: backgroundMusicUrl, error: nil)
+        audioPlayer.prepareToPlay()
+        super.init(size: size)
+    }
+    
+    // --- Sound effects ---
+
     
     // ------ Physics ------
     
@@ -34,6 +47,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         placeInScene(ship, self)
+        
+        audioPlayer.play()
         
         /* --- Ship does not really need a physics body
         ship.physicsBody.categoryBitMask  = shipCategory
@@ -53,6 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // ----- User interaction -----
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
         var touch : UITouch! =  touches.anyObject() as UITouch;
         firstTouch = touch.locationInNode(self)
         
@@ -60,6 +76,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         originalPosition = ship.position
         ship.startShooting()
+        
+        runAction(SKAction.playSoundFileNamed("laser.aiff", waitForCompletion: false))
+        
+        
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
