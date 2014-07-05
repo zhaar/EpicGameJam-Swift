@@ -13,20 +13,29 @@ let PI = 3.1415926535
 class Ship: SKSpriteNode {
     
     var isShooting = false
-    let laserSprite:SKSpriteNode = SKSpriteNode(imageNamed: "laser")
-    
+    var laserSprite:Laser!
     
     func startShooting() {
         isShooting = true
-
-        laserSprite.yScale = 200
-        self.addChild(laserSprite)
+        laserSprite.alpha = 1
     }
     
     func stopShooting(){
         isShooting = false
-        
+        laserSprite.alpha = 0
     }
+    
+    func createLaser(scene: SKScene) {
+        println("laser created")
+        laserSprite = Laser(imageNamed: "laser")
+        laserSprite.anchorPoint = CGPointMake(0.5, 0.0)
+        laserSprite.position = CGPointMake(self.size.width * 0.5, 0.0)
+        laserSprite.yScale *= scene.size.height * 2
+        laserSprite.zRotation = -Float(M_PI_2)
+        println("scene height \(scene.size.height * 2)")
+        self.addChild(laserSprite)
+    }
+    
 }
 
 func getSceneCenter(scene : SKScene) -> CGPoint {
@@ -39,13 +48,13 @@ func createShip(image: String) -> Ship {
     ship.xScale = 0.15
     ship.yScale = 0.15
     ship.zRotation = CGFloat(PI * 0.5)
-    
     return ship
 }
 
 func placeInScene(ship: Ship, scene: SKScene) {
+    println("ship placed in the scene")
     ship.position = getSceneCenter(scene)
     ship.position.y *= 0.3
-    
+    ship.createLaser(scene)
     scene.addChild(ship)
 }

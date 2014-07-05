@@ -18,9 +18,6 @@ import SpriteKit
         left.y + right.y)
 }
 
-@infix func infixOperate<T>(left: T, right: T, f: (T, T) ->T ) -> T {
-    return f(left, right)
-}
 
 class GameScene: SKScene {
     
@@ -40,25 +37,19 @@ class GameScene: SKScene {
         firstTouch = touch.locationInNode(self)
         originalPosition = ship.position
         ship.startShooting()
-        
-        //CGPoint location = touch.locationInView(self.view)
-        //self.childNodeWithName("ship").position = location
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
         //print(event.description)
         var touch : UITouch! =  touches.anyObject() as UITouch;
         
-        var diff = touch.locationInNode(self) - firstTouch! 
-        
-        println("difference: \(diff)")
-        
+        var diff = touch.locationInNode(self) - firstTouch!
         
         ship.position = diff + originalPosition!
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        ship.stopShooting()
+        //ship.stopShooting()
     }
    
     override func update(currentTime: CFTimeInterval) {
