@@ -21,7 +21,6 @@ import AudioToolbox
         left.y + right.y)
 }
 
-
 func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
     if( value > max ) {
         return max
@@ -121,6 +120,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         contentNode!.runAction(bgSequence)
     }
     
+
     
     
     // ----- User interaction -----
@@ -136,7 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ship.startShooting()
 
         var emitterNode:SKEmitterNode = NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource("Explosion", ofType: "sks")) as SKEmitterNode
-        
+
         emitterNode.position = touch.locationInNode(self)
         
         self.addChild(emitterNode)
@@ -148,7 +148,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ship.shootMissile()
         var moveToPosition : CGPoint = diff + originalPosition!
         
-
         moveToPosition.x = clamp(0.0 + ship.frame.width * 0.5, self.size.width - ship.frame.width * 0.5, moveToPosition.x)
         moveToPosition.y = clamp(0.0, self.size.height - ship.frame.height * 0.5, moveToPosition.y)
         
@@ -194,6 +193,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
     }
+
     
     // ----- Physics delegate methods -----
     

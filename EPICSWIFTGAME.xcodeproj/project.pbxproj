@@ -43,6 +43,9 @@
 		95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F693DA1967101C00EA05B4 /* Main.storyboard */; };
 		95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F693DD1967101C00EA05B4 /* Images.xcassets */; };
 		95F693EA1967101D00EA05B4 /* EPICGAMETESTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693E91967101D00EA05B4 /* EPICGAMETESTTests.swift */; };
+		95FAE0A6196887D70083B21B /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0A5196887D70083B21B /* functions.swift */; };
+		95FAE0A8196887FC0083B21B /* script1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0A7196887FC0083B21B /* script1.txt */; };
+		95FAE0AA19688C9B0083B21B /* CompositeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0A919688C9B0083B21B /* CompositeText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		95F693E31967101D00EA05B4 /* EPICSWIFTGAMETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPICSWIFTGAMETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F693E81967101D00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693E91967101D00EA05B4 /* EPICGAMETESTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICGAMETESTTests.swift; sourceTree = "<group>"; };
+		95FAE0A5196887D70083B21B /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		95FAE0A7196887FC0083B21B /* script1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script1.txt; sourceTree = "<group>"; };
+		95FAE0A919688C9B0083B21B /* CompositeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		845659101967FA1E001E0CF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				95FAE0A7196887FC0083B21B /* script1.txt */,
 				84F88B4A1968483400BE41D8 /* Sounds */,
 				84F88B3A1968411C00BE41D8 /* laser.wav */,
 				84F88B3C196847DB00BE41D8 /* laser.aiff */,
@@ -169,6 +176,8 @@
 		954F4CAD1968400D0028CDF6 /* HelperFunctions */ = {
 			isa = PBXGroup;
 			children = (
+				95FAE0A919688C9B0083B21B /* CompositeText.swift */,
+				95FAE0A5196887D70083B21B /* functions.swift */,
 			);
 			name = HelperFunctions;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				954F4CAD1968400D0028CDF6 /* HelperFunctions */,
+				84F88B38196840BE00BE41D8 /* backgroundMusic.mp3 */,
 				955003B619674D7B00743A4A /* MyPlayground.playground */,
 				95F693D21967101C00EA05B4 /* AppDelegate.swift */,
 				95F693D41967101C00EA05B4 /* GameScene.sks */,
@@ -338,6 +348,7 @@
 				84F88B701968663000BE41D8 /* spark.png in Resources */,
 				84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */,
 				84F88B60196859FC00BE41D8 /* dead1@2x.png in Resources */,
+				95FAE0A8196887FC0083B21B /* script1.txt in Resources */,
 				84F88B5C196859D800BE41D8 /* monster7@2x.png in Resources */,
 				84F88B62196859FC00BE41D8 /* dead3@2x.png in Resources */,
 				84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */,
@@ -363,9 +374,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FAE0AA19688C9B0083B21B /* CompositeText.swift in Sources */,
 				95F693D71967101C00EA05B4 /* GameScene.swift in Sources */,
 				955003D019675B4C00743A4A /* Ship.swift in Sources */,
 				9580E84119688314004A3818 /* IntroScene.swift in Sources */,
+				95FAE0A6196887D70083B21B /* functions.swift in Sources */,
 				84F88B6819685B8700BE41D8 /* Enemy.swift in Sources */,
 				95F693D91967101C00EA05B4 /* GameViewController.swift in Sources */,
 				845659141967FFB2001E0CF6 /* Laser.swift in Sources */,

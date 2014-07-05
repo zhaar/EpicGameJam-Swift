@@ -16,9 +16,6 @@ let introText = "The dawn of our civilisation is upon us."
 
 
 class IntroScene: SKScene {
-    func gotoGame(){
-        self.view.presentScene(GameScene())
-    }
     
     var time = NSTimeInterval(0)
     var labels: CompositeText!
