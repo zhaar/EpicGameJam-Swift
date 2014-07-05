@@ -31,7 +31,7 @@ func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
     }
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
     
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
@@ -94,19 +94,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         contentNode!.position = CGPointZero
         self.addChild(contentNode)
-        
-        //contentNode.runAction(SKAction.moveBy(CGVectorMake(0.0, -background.size.height), duration: 20.0))
-        
+                
         scheduleBackgroundReplacing()
     }
     
     func scheduleBackgroundReplacing() {
-        var scrollingTime = 20.0
+        var scrollingTime = 3.0
         let actions = [
             SKAction.moveBy(CGVectorMake(0.0, -self.lowerBackground!.size.height), duration: scrollingTime),
             SKAction.runBlock({
                 
-                self.lowerBackground!.position.y = self.lowerBackground!.size.height
+                self.lowerBackground!.position.y += 2 * self.lowerBackground!.size.height
+                self.lowerBackground!.removeAllChildren()
                 
                 var temp = self.lowerBackground
                 self.lowerBackground = self.higherBackground
@@ -118,8 +117,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var bgSequence:SKAction = SKAction.sequence(actions)
         contentNode!.runAction(bgSequence)
     }
-    
-    
     
     // ----- User interaction -----
     
@@ -133,12 +130,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         originalPosition = ship.position
         ship.startShooting()
         
-        
-        var emitterNode:SKEmitterNode = NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource("Explosion", ofType: "sks")) as SKEmitterNode
-        
-        emitterNode.position = touch.locationInNode(self)
-        
-        self.addChild(emitterNode)
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
@@ -171,12 +162,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println("The random position is x:" + String(randomPosition.x) + " and y: " + String(randomPosition.y) )
         
         // Get random monster
-        let randomMonsterIndex = (arc4random() % 6) + 1
+        let randomMonsterIndex:Int = Int((arc4random() % 6) + 1)
         var randomMonsterSpriteName:String = "monster" + String(randomMonsterIndex)
         
         println("Random monster sprite name " + randomMonsterSpriteName)
         
-        var randomMonster = SKSpriteNode(imageNamed: randomMonsterSpriteName)
+        
+        var randomMonster = makeSquidEnemy()
+        
+        //randomMonster.hitPoints = 20
+        
+        randomMonster.delegate = self
         randomMonster.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(randomMonster.size.width, randomMonster.size.height))
         
         randomMonster.physicsBody.categoryBitMask = monsterCategory
@@ -189,8 +185,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         randomMonster.position = randomPosition
 
         self.addChild(randomMonster)
-        
-        
     }
     
     // ----- Physics delegate methods -----
@@ -212,9 +206,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if (bodyA.categoryBitMask == missileCategory && bodyB.categoryBitMask == monsterCategory ||
             bodyB.categoryBitMask == missileCategory && bodyA.categoryBitMask == monsterCategory ) {
-            //TODO explode monsters
-            var monster = bodyA.node
-            monster.removeFromParent()
+
+                
+                var monster = bodyA.node as Enemy
+                bodyB.node.removeFromParent()
+                monster.hit()
+                
+            //monster.removeFromParent()
         }
     }
+    
+    func enemyDidExplode(sender: Enemy) {
+        
+        var blood = SKSpriteNode(imageNamed: "dead1")
+        blood.position = sender.convertPoint(CGPointZero, toNode: lowerBackground)
+        lowerBackground!.addChild(blood)
+        
+    }
+    
 }
