@@ -45,6 +45,15 @@ class Ship: SKSpriteNode {
         
         missileSprite.physicsBody.applyImpulse(CGVectorMake(0, 10))
     }
+//    
+//    func createLaser(scene: SKScene) {
+//        laserSprite = Laser(imageNamed: "laser")
+//        laserSprite.anchorPoint = CGPointMake(0.5, 0.0)
+//        laserSprite.position = CGPointMake(self.size.width * 0.5, 0.0)
+//        laserSprite.size.height = scene.size.height * 2
+//        self.addChild(laserSprite)
+//    }
+    
 }
 
 func getSceneCenter(scene : SKScene) -> CGPoint {

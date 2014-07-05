@@ -35,6 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
     
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
+
     let ship: Ship = createShip("cruiser")
     let audioPlayer:AVAudioPlayer
     // -- Backgrounds --
@@ -118,6 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         contentNode!.runAction(bgSequence)
     }
     
+    
     // ----- User interaction -----
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -129,7 +131,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         
         originalPosition = ship.position
         ship.startShooting()
-        
+
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
@@ -145,7 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        ship.stopShooting()
+        //ship.stopShooting()
     }
     
     // ----- Monster generation -----
@@ -186,6 +188,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
 
         self.addChild(randomMonster)
     }
+
     
     // ----- Physics delegate methods -----
     

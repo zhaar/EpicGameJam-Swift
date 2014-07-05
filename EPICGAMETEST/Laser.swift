@@ -11,5 +11,3 @@ import SpriteKit
 class Laser : SKSpriteNode {
     
 }
-
-

@@ -45,10 +45,7 @@ class PrototypeScene: SKScene {
 
 let scene:PrototypeScene = PrototypeScene(size: CGSizeMake(320, 586))
 scene.scaleMode = SKSceneScaleMode.AspectFit
-
 view.presentScene(scene)
 
-//let redBox:SKSpriteNode = SKSpriteNode(color: SKColor.redColor(), size:CGSizeMake(300, 300))
-//redBox.position = CGPointMake(512, 384)
-//redBox.runAction(SKAction.repeatActionForever(SKAction.rotateByAngle(20, duration: 2)))
-//scene.addChild(redBox)
+let text = CompositeText()
+scene.addChild(redBox)
