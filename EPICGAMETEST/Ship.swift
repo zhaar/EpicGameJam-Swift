@@ -26,12 +26,10 @@ class Ship: SKSpriteNode {
     }
     
     func createLaser(scene: SKScene) {
-        println("laser created")
         laserSprite = Laser(imageNamed: "laser")
         laserSprite.anchorPoint = CGPointMake(0.5, 0.0)
         laserSprite.position = CGPointMake(self.size.width * 0.5, 0.0)
         laserSprite.size.height = scene.size.height * 2
-        println("scene height \(scene.size.height * 2)")
         self.addChild(laserSprite)
     }
     
@@ -50,7 +48,6 @@ func createShip(image: String) -> Ship {
 }
 
 func placeInScene(ship: Ship, scene: SKScene) {
-    println("ship placed in the scene")
     ship.position = getSceneCenter(scene)
     ship.position.y *= 0.3
     ship.createLaser(scene)

@@ -10,6 +10,11 @@
 		845659141967FFB2001E0CF6 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659131967FFB2001E0CF6 /* Laser.swift */; };
 		9521587119681471009EBF9C /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 9521587019681471009EBF9C /* laser.png */; };
 		95215873196815F6009EBF9C /* destroyer.png in Resources */ = {isa = PBXBuildFile; fileRef = 95215872196815F6009EBF9C /* destroyer.png */; };
+		954F4CA519681D450028CDF6 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F4CA419681D450028CDF6 /* IntroScene.swift */; };
+		954F4CAB196826B50028CDF6 /* background_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 954F4CA9196826B50028CDF6 /* background_intro.png */; };
+		954F4CAC196826B50028CDF6 /* background_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 954F4CAA196826B50028CDF6 /* background_intro@2x.png */; };
+		954F4CAF1968401F0028CDF6 /* CompositeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F4CAE1968401F0028CDF6 /* CompositeText.swift */; };
+		954F4CB1196846B50028CDF6 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F4CB0196846B50028CDF6 /* functions.swift */; };
 		955003D019675B4C00743A4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955003CF19675B4C00743A4A /* Ship.swift */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
@@ -34,6 +39,11 @@
 		845659131967FFB2001E0CF6 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		9521587019681471009EBF9C /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
 		95215872196815F6009EBF9C /* destroyer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destroyer.png; sourceTree = "<group>"; };
+		954F4CA419681D450028CDF6 /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		954F4CA9196826B50028CDF6 /* background_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_intro.png; sourceTree = "<group>"; };
+		954F4CAA196826B50028CDF6 /* background_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_intro@2x.png"; sourceTree = "<group>"; };
+		954F4CAE1968401F0028CDF6 /* CompositeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeText.swift; sourceTree = "<group>"; };
+		954F4CB0196846B50028CDF6 /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		955003B619674D7B00743A4A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		955003CF19675B4C00743A4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,10 +80,30 @@
 		845659101967FA1E001E0CF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				954F4CA9196826B50028CDF6 /* background_intro.png */,
+				954F4CAA196826B50028CDF6 /* background_intro@2x.png */,
 				9521587019681471009EBF9C /* laser.png */,
 				95215872196815F6009EBF9C /* destroyer.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		954F4CA61968252C0028CDF6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				95F693D61967101C00EA05B4 /* GameScene.swift */,
+				954F4CA419681D450028CDF6 /* IntroScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		954F4CAD1968400D0028CDF6 /* HelperFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				954F4CAE1968401F0028CDF6 /* CompositeText.swift */,
+				954F4CB0196846B50028CDF6 /* functions.swift */,
+			);
+			name = HelperFunctions;
 			sourceTree = "<group>";
 		};
 		95F693C41967101C00EA05B4 = {
@@ -97,11 +127,12 @@
 		95F693CF1967101C00EA05B4 /* EPICSWIFTGAME */ = {
 			isa = PBXGroup;
 			children = (
+				954F4CAD1968400D0028CDF6 /* HelperFunctions */,
 				845659101967FA1E001E0CF6 /* Resources */,
 				955003B619674D7B00743A4A /* MyPlayground.playground */,
 				95F693D21967101C00EA05B4 /* AppDelegate.swift */,
 				95F693D41967101C00EA05B4 /* GameScene.sks */,
-				95F693D61967101C00EA05B4 /* GameScene.swift */,
+				954F4CA61968252C0028CDF6 /* Scenes */,
 				955003CF19675B4C00743A4A /* Ship.swift */,
 				845659131967FFB2001E0CF6 /* Laser.swift */,
 				95F693D81967101C00EA05B4 /* GameViewController.swift */,
@@ -187,6 +218,7 @@
 				TargetAttributes = {
 					95F693CC1967101C00EA05B4 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 9PXQEQ2PNN;
 					};
 					95F693E21967101D00EA05B4 = {
 						CreatedOnToolsVersion = 6.0;
@@ -218,9 +250,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954F4CAB196826B50028CDF6 /* background_intro.png in Resources */,
 				95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */,
 				95215873196815F6009EBF9C /* destroyer.png in Resources */,
 				95F693D51967101C00EA05B4 /* GameScene.sks in Resources */,
+				954F4CAC196826B50028CDF6 /* background_intro@2x.png in Resources */,
 				95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */,
 				9521587119681471009EBF9C /* laser.png in Resources */,
 			);
@@ -241,6 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F693D71967101C00EA05B4 /* GameScene.swift in Sources */,
+				954F4CA519681D450028CDF6 /* IntroScene.swift in Sources */,
+				954F4CAF1968401F0028CDF6 /* CompositeText.swift in Sources */,
+				954F4CB1196846B50028CDF6 /* functions.swift in Sources */,
 				955003D019675B4C00743A4A /* Ship.swift in Sources */,
 				95F693D91967101C00EA05B4 /* GameViewController.swift in Sources */,
 				845659141967FFB2001E0CF6 /* Laser.swift in Sources */,
