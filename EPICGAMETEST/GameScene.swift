@@ -36,7 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
 
-    let ship: Ship = createShip("cruiser")
+    let ship: Ship = createShip("fusee")
     let audioPlayer:AVAudioPlayer
     // -- Backgrounds --
     var lowerBackground :SKSpriteNode?
@@ -49,11 +49,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         audioPlayer.prepareToPlay()
         super.init(size: size)
     }
-    
-    // ------ Physics ------
-    let missileCategory: UInt32 = 1 << 0
-    //let shipCategory:    UInt32 = 1 << 1
-    let monsterCategory: UInt32 = 1 << 2
     
     override func didMoveToView(view: SKView) {
         
@@ -175,14 +170,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         //randomMonster.hitPoints = 20
         
         randomMonster.delegate = self
-        randomMonster.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(randomMonster.size.width, randomMonster.size.height))
-        
-        randomMonster.physicsBody.categoryBitMask = monsterCategory
-        randomMonster.physicsBody.collisionBitMask = missileCategory
-        randomMonster.physicsBody.contactTestBitMask = missileCategory
-        
-        randomMonster.xScale = 0.4;
-        randomMonster.yScale = 0.4;
         
         randomMonster.position = randomPosition
 
@@ -210,12 +197,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         if (bodyA.categoryBitMask == missileCategory && bodyB.categoryBitMask == monsterCategory ||
             bodyB.categoryBitMask == missileCategory && bodyA.categoryBitMask == monsterCategory ) {
 
-                
                 var monster = bodyA.node as Enemy
                 bodyB.node.removeFromParent()
                 monster.hit()
-                
-            //monster.removeFromParent()
         }
     }
     

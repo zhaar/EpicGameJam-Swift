@@ -62,11 +62,9 @@ func getSceneCenter(scene : SKScene) -> CGPoint {
 
 func createShip(image: String) -> Ship {
     let ship = Ship(imageNamed: image)
-    ship.anchorPoint = CGPoint(x:0.5, y:0.5)
-    ship.xScale = 0.15
-    ship.yScale = 0.15
-    ship.zRotation = CGFloat(PI * 0.5)
-    
+    ship.anchorPoint = CGPoint(x:0.5, y:1.0)
+    ship.xScale = 0.6
+    ship.yScale = 0.6
     return ship
 }
 
