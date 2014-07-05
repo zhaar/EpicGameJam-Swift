@@ -12,12 +12,12 @@
 		84F88B39196840BE00BE41D8 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B38196840BE00BE41D8 /* backgroundMusic.mp3 */; };
 		84F88B3B1968411C00BE41D8 /* laser.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3A1968411C00BE41D8 /* laser.wav */; };
 		84F88B3D196847DB00BE41D8 /* laser.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3C196847DB00BE41D8 /* laser.aiff */; };
-		84F88B441968482A00BE41D8 /* Death 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3E1968482A00BE41D8 /* Death 1.wav */; };
+		84F88B441968482A00BE41D8 /* Death1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3E1968482A00BE41D8 /* Death1.wav */; };
 		84F88B451968482A00BE41D8 /* Death 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3F1968482A00BE41D8 /* Death 2.wav */; };
 		84F88B461968482A00BE41D8 /* Death 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B401968482A00BE41D8 /* Death 3.wav */; };
-		84F88B471968482A00BE41D8 /* Death 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B411968482A00BE41D8 /* Death 4.wav */; };
-		84F88B481968482A00BE41D8 /* Death 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B421968482A00BE41D8 /* Death 5.wav */; };
-		84F88B491968482A00BE41D8 /* Death 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B431968482A00BE41D8 /* Death 6.wav */; };
+		84F88B471968482A00BE41D8 /* Death4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B411968482A00BE41D8 /* Death4.wav */; };
+		84F88B481968482A00BE41D8 /* Death5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B421968482A00BE41D8 /* Death5.wav */; };
+		84F88B491968482A00BE41D8 /* Death6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B431968482A00BE41D8 /* Death6.wav */; };
 		84F88B4E196859A600BE41D8 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B4D196859A600BE41D8 /* background@2x.png */; };
 		84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B4F196859D800BE41D8 /* monster1@2x.png */; };
 		84F88B57196859D800BE41D8 /* monster2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B50196859D800BE41D8 /* monster2@2x.png */; };
@@ -31,6 +31,9 @@
 		84F88B62196859FC00BE41D8 /* dead3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B5F196859FC00BE41D8 /* dead3@2x.png */; };
 		84F88B6419685A2500BE41D8 /* ship@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B6319685A2500BE41D8 /* ship@2x.png */; };
 		84F88B6619685A3800BE41D8 /* laser_munition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B6519685A3800BE41D8 /* laser_munition@2x.png */; };
+		84F88B6819685B8700BE41D8 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B6719685B8700BE41D8 /* Enemy.swift */; };
+		84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B6D1968663000BE41D8 /* Explosion.sks */; };
+		84F88B701968663000BE41D8 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B6E1968663000BE41D8 /* spark.png */; };
 		955003D019675B4C00743A4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955003CF19675B4C00743A4A /* Ship.swift */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
@@ -58,12 +61,12 @@
 		84F88B38196840BE00BE41D8 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		84F88B3A1968411C00BE41D8 /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
 		84F88B3C196847DB00BE41D8 /* laser.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = laser.aiff; sourceTree = "<group>"; };
-		84F88B3E1968482A00BE41D8 /* Death 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Death 1.wav"; sourceTree = "<group>"; };
+		84F88B3E1968482A00BE41D8 /* Death1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Death1.wav; sourceTree = "<group>"; };
 		84F88B3F1968482A00BE41D8 /* Death 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Death 2.wav"; sourceTree = "<group>"; };
 		84F88B401968482A00BE41D8 /* Death 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Death 3.wav"; sourceTree = "<group>"; };
-		84F88B411968482A00BE41D8 /* Death 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Death 4.wav"; sourceTree = "<group>"; };
-		84F88B421968482A00BE41D8 /* Death 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Death 5.wav"; sourceTree = "<group>"; };
-		84F88B431968482A00BE41D8 /* Death 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Death 6.wav"; sourceTree = "<group>"; };
+		84F88B411968482A00BE41D8 /* Death4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Death4.wav; sourceTree = "<group>"; };
+		84F88B421968482A00BE41D8 /* Death5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Death5.wav; sourceTree = "<group>"; };
+		84F88B431968482A00BE41D8 /* Death6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Death6.wav; sourceTree = "<group>"; };
 		84F88B4D196859A600BE41D8 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		84F88B4F196859D800BE41D8 /* monster1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster1@2x.png"; sourceTree = "<group>"; };
 		84F88B50196859D800BE41D8 /* monster2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster2@2x.png"; sourceTree = "<group>"; };
@@ -77,6 +80,9 @@
 		84F88B5F196859FC00BE41D8 /* dead3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dead3@2x.png"; sourceTree = "<group>"; };
 		84F88B6319685A2500BE41D8 /* ship@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ship@2x.png"; sourceTree = "<group>"; };
 		84F88B6519685A3800BE41D8 /* laser_munition@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser_munition@2x.png"; sourceTree = "<group>"; };
+		84F88B6719685B8700BE41D8 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		84F88B6D1968663000BE41D8 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		84F88B6E1968663000BE41D8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		955003B619674D7B00743A4A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		955003CF19675B4C00743A4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +136,8 @@
 				84F88B5D196859FC00BE41D8 /* dead1@2x.png */,
 				84F88B5E196859FC00BE41D8 /* dead2@2x.png */,
 				84F88B5F196859FC00BE41D8 /* dead3@2x.png */,
+				84F88B6D1968663000BE41D8 /* Explosion.sks */,
+				84F88B6E1968663000BE41D8 /* spark.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -137,12 +145,12 @@
 		84F88B4A1968483400BE41D8 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				84F88B3E1968482A00BE41D8 /* Death 1.wav */,
+				84F88B3E1968482A00BE41D8 /* Death1.wav */,
 				84F88B3F1968482A00BE41D8 /* Death 2.wav */,
 				84F88B401968482A00BE41D8 /* Death 3.wav */,
-				84F88B411968482A00BE41D8 /* Death 4.wav */,
-				84F88B421968482A00BE41D8 /* Death 5.wav */,
-				84F88B431968482A00BE41D8 /* Death 6.wav */,
+				84F88B411968482A00BE41D8 /* Death4.wav */,
+				84F88B421968482A00BE41D8 /* Death5.wav */,
+				84F88B431968482A00BE41D8 /* Death6.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -169,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				84F88B38196840BE00BE41D8 /* backgroundMusic.mp3 */,
-				845659101967FA1E001E0CF6 /* Resources */,
 				955003B619674D7B00743A4A /* MyPlayground.playground */,
 				95F693D21967101C00EA05B4 /* AppDelegate.swift */,
 				95F693D41967101C00EA05B4 /* GameScene.sks */,
@@ -178,9 +185,11 @@
 				95F693D81967101C00EA05B4 /* GameViewController.swift */,
 				95F693DA1967101C00EA05B4 /* Main.storyboard */,
 				95F693DD1967101C00EA05B4 /* Images.xcassets */,
+				845659101967FA1E001E0CF6 /* Resources */,
 				95F693D01967101C00EA05B4 /* Supporting Files */,
 				845659131967FFB2001E0CF6 /* Laser.swift */,
 				8456592D19681ECB001E0CF6 /* SwiftCodeTests.playground */,
+				84F88B6719685B8700BE41D8 /* Enemy.swift */,
 			);
 			path = EPICGAMETEST;
 			sourceTree = "<group>";
@@ -295,26 +304,28 @@
 				95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */,
 				84F88B3B1968411C00BE41D8 /* laser.wav in Resources */,
 				84F88B59196859D800BE41D8 /* monster4@2x.png in Resources */,
-				84F88B471968482A00BE41D8 /* Death 4.wav in Resources */,
+				84F88B471968482A00BE41D8 /* Death4.wav in Resources */,
 				84F88B461968482A00BE41D8 /* Death 3.wav in Resources */,
 				84F88B4E196859A600BE41D8 /* background@2x.png in Resources */,
 				95F693D51967101C00EA05B4 /* GameScene.sks in Resources */,
 				84F88B5A196859D800BE41D8 /* monster5@2x.png in Resources */,
 				95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */,
-				84F88B481968482A00BE41D8 /* Death 5.wav in Resources */,
+				84F88B481968482A00BE41D8 /* Death5.wav in Resources */,
 				84F88B6419685A2500BE41D8 /* ship@2x.png in Resources */,
 				84F88B58196859D800BE41D8 /* monster3@2x.png in Resources */,
 				84F88B57196859D800BE41D8 /* monster2@2x.png in Resources */,
 				84F88B6619685A3800BE41D8 /* laser_munition@2x.png in Resources */,
 				845659121967FA29001E0CF6 /* laser.png in Resources */,
+				84F88B701968663000BE41D8 /* spark.png in Resources */,
+				84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */,
 				84F88B60196859FC00BE41D8 /* dead1@2x.png in Resources */,
 				84F88B5C196859D800BE41D8 /* monster7@2x.png in Resources */,
 				84F88B62196859FC00BE41D8 /* dead3@2x.png in Resources */,
 				84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */,
 				84F88B61196859FC00BE41D8 /* dead2@2x.png in Resources */,
 				84F88B5B196859D800BE41D8 /* monster6@2x.png in Resources */,
-				84F88B441968482A00BE41D8 /* Death 1.wav in Resources */,
-				84F88B491968482A00BE41D8 /* Death 6.wav in Resources */,
+				84F88B441968482A00BE41D8 /* Death1.wav in Resources */,
+				84F88B491968482A00BE41D8 /* Death6.wav in Resources */,
 				84F88B3D196847DB00BE41D8 /* laser.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +346,7 @@
 			files = (
 				95F693D71967101C00EA05B4 /* GameScene.swift in Sources */,
 				955003D019675B4C00743A4A /* Ship.swift in Sources */,
+				84F88B6819685B8700BE41D8 /* Enemy.swift in Sources */,
 				95F693D91967101C00EA05B4 /* GameViewController.swift in Sources */,
 				845659141967FFB2001E0CF6 /* Laser.swift in Sources */,
 				95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */,

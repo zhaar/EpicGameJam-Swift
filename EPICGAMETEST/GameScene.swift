@@ -37,6 +37,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var originalPosition: CGPoint?
     let ship: Ship = createShip("cruiser")
     let audioPlayer:AVAudioPlayer
+    // -- Backgrounds --
+    var lowerBackground :SKSpriteNode?
+    var higherBackground :SKSpriteNode?
+    var contentNode: SKNode?
     
     init(size: CGSize){
         var backgroundMusicUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "mp3"))
@@ -45,9 +49,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         super.init(size: size)
     }
     
-    // --- Sound effects ---
-
-    
     // ------ Physics ------
     let missileCategory: UInt32 = 1 << 0
     //let shipCategory:    UInt32 = 1 << 1
@@ -55,14 +56,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         
-        var background = SKSpriteNode(imageNamed: "background")
-        background.anchorPoint = CGPointZero
-        background.position = CGPointZero
-        self.addChild(background)
-        
+        setupLevelNode()
         
         placeInScene(ship, self)
-
         
         audioPlayer.play()
         
@@ -74,17 +70,56 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0)
         self.physicsWorld.contactDelegate = self
         
-        
-
-        
         for i in 0..3 {
             placeRandomMonster()
         }
         
-
-        
         self.userInteractionEnabled = true
     }
+    
+    func setupLevelNode() {
+        // Load the background
+        
+        contentNode = SKNode()
+        
+        self.lowerBackground = SKSpriteNode(imageNamed: "background")
+        self.lowerBackground!.anchorPoint = CGPointZero
+        self.lowerBackground!.position = CGPointZero
+        contentNode!.addChild(lowerBackground)
+        
+        self.higherBackground = SKSpriteNode(imageNamed: "background")
+        self.higherBackground!.anchorPoint = CGPointZero
+        self.higherBackground!.position = CGPointMake(0.0, self.lowerBackground!.size.height)
+        contentNode!.addChild(higherBackground)
+        
+        contentNode!.position = CGPointZero
+        self.addChild(contentNode)
+        
+        //contentNode.runAction(SKAction.moveBy(CGVectorMake(0.0, -background.size.height), duration: 20.0))
+        
+        scheduleBackgroundReplacing()
+    }
+    
+    func scheduleBackgroundReplacing() {
+        var scrollingTime = 20.0
+        let actions = [
+            SKAction.moveBy(CGVectorMake(0.0, -self.lowerBackground!.size.height), duration: scrollingTime),
+            SKAction.runBlock({
+                
+                self.lowerBackground!.position.y = self.lowerBackground!.size.height
+                
+                var temp = self.lowerBackground
+                self.lowerBackground = self.higherBackground
+                self.higherBackground = temp
+                
+                self.scheduleBackgroundReplacing()
+                })
+        ]
+        var bgSequence:SKAction = SKAction.sequence(actions)
+        contentNode!.runAction(bgSequence)
+    }
+    
+    
     
     // ----- User interaction -----
     
@@ -98,7 +133,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         originalPosition = ship.position
         ship.startShooting()
         
-        runAction(SKAction.playSoundFileNamed("laser.aiff", waitForCompletion: false))
+        
+        var emitterNode:SKEmitterNode = NSKeyedUnarchiver.unarchiveObjectWithFile(NSBundle.mainBundle().pathForResource("Explosion", ofType: "sks")) as SKEmitterNode
+        
+        emitterNode.position = touch.locationInNode(self)
+        
+        self.addChild(emitterNode)
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
@@ -149,6 +189,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         randomMonster.position = randomPosition
 
         self.addChild(randomMonster)
+        
+        
     }
     
     // ----- Physics delegate methods -----
