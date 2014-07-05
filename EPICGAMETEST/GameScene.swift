@@ -18,6 +18,10 @@ import SpriteKit
         left.y + right.y)
 }
 
+@infix func infixOperate<T>(left: T, right: T, f: (T, T) ->T ) -> T {
+    return f(left, right)
+}
+
 class GameScene: SKScene {
     
     var firstTouch: CGPoint?
