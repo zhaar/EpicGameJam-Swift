@@ -26,19 +26,20 @@ class GameScene: SKScene {
     
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
+    let ship: Ship = createShip("cruiser")
     
-    func ship() -> SKNode { return self.childNodeWithName("ship")}
+    //func ship() -> SKNode { return self.childNodeWithName("ship")}
     
     override func didMoveToView(view: SKView) {
-        let ship = createShip("carrier", self)
-        ship.name = "ship"
         self.userInteractionEnabled = true
+        placeInScene(ship, self)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         var touch : UITouch! =  touches.anyObject() as UITouch;
         firstTouch = touch.locationInNode(self)
-        originalPosition = ship().position
+        originalPosition = ship.position
+        ship.startShooting()
         
         //CGPoint location = touch.locationInView(self.view)
         //self.childNodeWithName("ship").position = location
@@ -52,9 +53,12 @@ class GameScene: SKScene {
         
         println("difference: \(diff)")
         
-        self.childNodeWithName("ship").position = diff + originalPosition!
         
-        
+        ship.position = diff + originalPosition!
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        ship.stopShooting()
     }
    
     override func update(currentTime: CFTimeInterval) {
