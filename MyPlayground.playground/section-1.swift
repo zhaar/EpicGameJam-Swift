@@ -30,7 +30,6 @@ class PrototypeScene: SKScene {
         
     }
     
-    
     override func touchesBeganWithEvent(event: NSEvent!)
     {
         println("Hello touches")
