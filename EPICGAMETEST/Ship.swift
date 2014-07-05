@@ -43,7 +43,7 @@ class Ship: SKSpriteNode {
         missileSprite.physicsBody.collisionBitMask = monsterCategory
         missileSprite.physicsBody.contactTestBitMask = monsterCategory
         
-        missileSprite.physicsBody.applyImpulse(CGVectorMake(0, 50))
+        missileSprite.physicsBody.applyImpulse(CGVectorMake(0, 10))
     }
 }
 

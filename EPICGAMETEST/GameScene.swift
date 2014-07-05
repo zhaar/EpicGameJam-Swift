@@ -21,6 +21,15 @@ import AudioToolbox
         left.y + right.y)
 }
 
+func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
+    if( value > max ) {
+        return max
+    } else if( value < min ) {
+        return min
+    } else {
+        return value
+    }
+}
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -40,13 +49,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     
     // ------ Physics ------
-    
     let missileCategory: UInt32 = 1 << 0
     //let shipCategory:    UInt32 = 1 << 1
     let monsterCategory: UInt32 = 1 << 2
     
     override func didMoveToView(view: SKView) {
+        
+        var background = SKSpriteNode(imageNamed: "background")
+        background.anchorPoint = CGPointZero
+        background.position = CGPointZero
+        self.addChild(background)
+        
+        
         placeInScene(ship, self)
+
         
         audioPlayer.play()
         
@@ -58,9 +74,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0)
         self.physicsWorld.contactDelegate = self
         
+        
+
+        
         for i in 0..3 {
             placeRandomMonster()
         }
+        
+
         
         self.userInteractionEnabled = true
     }
@@ -78,15 +99,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ship.startShooting()
         
         runAction(SKAction.playSoundFileNamed("laser.aiff", waitForCompletion: false))
-        
-        
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
-        var touch : UITouch! =  touches.anyObject() as UITouch;
+        var touch : UITouch! =  touches.anyObject() as UITouch
         var diff = touch.locationInNode(self) - firstTouch!
         ship.shootMissile()
-        ship.position = diff + originalPosition!
+        var moveToPosition : CGPoint = diff + originalPosition!
+        
+        moveToPosition.x = clamp(0.0 + ship.frame.width * 0.5, self.size.width - ship.frame.width * 0.5, moveToPosition.x)
+        moveToPosition.y = clamp(0.0, self.size.height - ship.frame.height * 0.5, moveToPosition.y)
+        
+        ship.position = moveToPosition
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {

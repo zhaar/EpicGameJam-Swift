@@ -48,8 +48,6 @@ class GameViewController: UIViewController {
         let gameScene = GameScene.sceneWithSize(self.view.frame.size)
         var skView = self.view as SKView
         skView.presentScene(gameScene)
-        
-        
     }
 
     override func shouldAutorotate() -> Bool {
