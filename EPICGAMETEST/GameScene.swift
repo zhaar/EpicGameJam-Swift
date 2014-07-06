@@ -12,7 +12,7 @@ import AVFoundation
 import AudioToolbox
 
 
-class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
     
     var missiles:Array<SKSpriteNode>
 
@@ -317,7 +317,10 @@ class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate
                 bodyB.node.removeFromParent()
                 
                 let diff = ship.position - monster.position
-                monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
+                
+                //println ("This is the vec y " + String( )
+                
+                monster.shootInDirection(CGVectorMake(  diff.x * 0.1, clamp(-100, -10, diff.y * 0.1))  )
                 monster.hit()
 
                 score+=10
@@ -327,7 +330,6 @@ class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate
             var enemyProjectile = bodyA.node as SKSpriteNode
             enemyProjectile.removeFromParent()
             // TODO reduce ship life
-
         }
     }
     

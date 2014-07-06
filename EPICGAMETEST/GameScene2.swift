@@ -21,7 +21,7 @@ func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
     }
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
+class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
     
     var missiles:Array<SKSpriteNode>
 
