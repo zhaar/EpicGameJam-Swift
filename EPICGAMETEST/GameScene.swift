@@ -40,7 +40,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
 
     let ship: Ship = createShip("fusee")
     
-    
     let audioPlayer:AVAudioPlayer
     // -- Backgrounds --
     var lowerBackground :SKSpriteNode?
@@ -73,10 +72,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0)
         self.physicsWorld.contactDelegate = self
-        
+        /*
         for i in 0..3 {
             placeRandomMonster()
-        }
+        }*/
+        
+        generateMonstersContinously()
         
         self.userInteractionEnabled = true
     }
@@ -130,8 +131,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         var touch : UITouch! =  touches.anyObject() as UITouch;
         firstTouch = touch.locationInNode(self)
         
-        println("Touched X: " + String(firstTouch!.x) + " and at Y : " + String(firstTouch!.y))
-        
         originalPosition = ship.position
         //ship.shootMissile()
     }
@@ -154,36 +153,62 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     
     // ----- Monster generation -----
     
-    func placeRandomMonster() {
-        // Get rand x
-        let randX = arc4random() % UInt32(self.size.width)
-        let randY = arc4random() % UInt32(self.size.height)
+    func generateMonstersContinously() {
+        
+        let actions = [
+            SKAction.waitForDuration(2.0),
+            SKAction.runBlock({
+                // TODO factory method / config for lvls etc ... ?
+                let monster = makeSquidEnemy()
+                monster.delegate = self
+                let monsterPoint = self.generateRandPoinOnTopOfScreenForSprite(monster)
+                monster.position = monsterPoint
+                //let monsterPointInContentCoordinates = self.contentNode?.convertPoint(monsterPoint, fromNode: self)
+                
+                self.addChild(monster)
+                monster.physicsBody.applyImpulse(CGVectorMake(0.0, -10.0))
+            })]
+        runAction( SKAction.repeatActionForever(SKAction.sequence(actions)) )
+    }
     
-        println("RandX " + String(randX) + " : randY: " + String(randY))
+    /**
+    *   Gets a point for a sprite with an anchor point of (0.5, 0.5)
+    */
+    func generateRandPoinOnTopOfScreenForSprite(spriteToPlace :SKSpriteNode) -> CGPoint {
+        let halfSpriteWidth  = spriteToPlace.frame.size.width * 0.5
+        let halfSpriteHeight = (spriteToPlace.frame.size.height * 0.5)
         
-        var randomPosition:CGPoint = CGPointMake(CGFloat(randX), CGFloat(randY))
+        let randX = CGFloat( generateRandInBounds( UInt32(halfSpriteWidth) , upperBound: UInt32(self.size.width - halfSpriteWidth) ))
+        let y = self.size.height + CGFloat(halfSpriteHeight)
+
+        return CGPointMake(randX, y)
+    }
+    
+    func generateRandomPointOnScreen() -> CGPoint {
+        let randX = generateRandInBounds(0, upperBound: UInt32(self.size.width))
+        let randY = generateRandInBounds(0, upperBound: UInt32(self.size.height))
         
-        println("The random position is x:" + String(randomPosition.x) + " and y: " + String(randomPosition.y) )
-        
-        // Get random monster
-        let randomMonsterIndex:Int = Int((arc4random() % 6) + 1)
-        var randomMonsterSpriteName:String = "monster" + String(randomMonsterIndex)
-        
-        println("Random monster sprite name " + randomMonsterSpriteName)
-        
+        return CGPointMake(CGFloat(randX), CGFloat(randY))
+    }
+    
+    func generateRandInBounds( lowerBound: UInt32, upperBound : UInt32) -> UInt32 {
+        return arc4random() % upperBound + lowerBound
+    }
+    
+    func placeRandomMonster() {
+        var randomPosition = generateRandomPointOnScreen()
         
         var randomMonster = makeSquidEnemy()
-        
-        //randomMonster.hitPoints = 20
-        
         randomMonster.delegate = self
-        
         randomMonster.position = randomPosition
-
         self.addChild(randomMonster)
+        
+        /* --- TODO Make a monster
+        let randomMonsterIndex:Int = Int((arc4random() % 6) + 1)
+        var randomMonsterSpriteName:String = "monster" + String(randomMonsterIndex)
+        */
     }
 
-    
     // ----- Physics delegate methods -----
     
     func didBeginContact(contact: SKPhysicsContact!){
@@ -191,10 +216,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         var bodyA = contact.bodyA
         var bodyB = contact.bodyB
         
-       // bodyA.node.removeFromParent()
-        //bodyB.node.removeFromParent()
-        
-        // Detect Missile - Monster collision
         if (bodyA.categoryBitMask < bodyB.categoryBitMask){
             var temp = bodyA
             bodyA = bodyB
@@ -210,13 +231,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         }
     }
     
+    // --- Enemy delegate methods ---
+    
     func enemyDidExplode(sender: Enemy) {
         
         var blood = SKSpriteNode(imageNamed: "dead1")
         blood.position = sender.convertPoint(CGPointZero, toNode: lowerBackground)
         lowerBackground!.addChild(blood)
-        
     }
+    
+    // --- Ship delegate methods ---
     
     func shipLaunchedMissile(sender: Ship, missile: SKSpriteNode) {
         missiles.insert(missile, atIndex: 0)
@@ -238,7 +262,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 missile.removeFromParent()
             }
         }
-        println(missiles.count)
     }
     
 }
