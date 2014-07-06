@@ -12,38 +12,6 @@ import SpriteKit
 let fadeInDuration = NSTimeInterval(3)
 let displayDuration = NSTimeInterval(1)
 var animationDuration = fadeInDuration + displayDuration
-let introText = "The dawn of our civilisation is upon us."
-
-
-//class IntroScene: SKScene {
-//    
-//    var labels: CompositeText!
-//
-//    override func didMoveToView(view: SKView!) {
-//        
-//        let bg = SKSpriteNode(imageNamed: "background_intro")
-//        bg.anchorPoint = CGPointZero
-//        bg.position = CGPointZero
-//        self.addChild(bg)
-//        bg.alpha = 0
-//        
-//        bg.runAction(SKAction.sequence(
-//            [SKAction.fadeAlphaTo(1, duration: fadeInDuration),
-//            SKAction.waitForDuration(displayDuration),
-//            SKAction.fadeAlphaTo(0.0, duration: 10)]))
-//        
-//        
-//        let lines = loadText("script1")!
-//
-//        labels = CompositeText(lines: lines, scene: self)
-//        labels.displayNext(1)
-//    }
-//    
-//    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-//        labels.displayNext(1)
-//    }
-//}
-
 
 class TextScene: SKScene {
     
@@ -75,11 +43,8 @@ class TextScene: SKScene {
                     {println("running block");
                         self.labels.displayNext(1)}
                 ),
-                SKAction.fadeAlphaTo(0, duration: 10)
+                SKAction.fadeAlphaTo(0.2, duration: 10)
             ]))
-//        self.runAction(SKAction.sequence([
-//            SKAction.waitForDuration(animationDuration),
-//            SKAction.runBlock({self.labels.displayNext(1)})]))
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
@@ -89,6 +54,15 @@ class TextScene: SKScene {
     }
 }
 
+func transitionner(view: SKView){
+    let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1)
+    view.presentScene(GameScene.sceneWithSize(view.frame.size), transition: transition)
+}
+
 func makeIntroScene(size: CGSize) -> TextScene {
-    return TextScene(size: size, bgName: "background_intro", textName: "script_intro", {(view: SKView) in view.presentScene(GameScene.sceneWithSize(view.frame.size))})
+    return TextScene(size: size, bgName: "background_intro", textName: "script_intro", transitionner)
+}
+
+func level2Intro(size: CGSize) -> TextScene {
+    return TextScene(size: size, bgName: "background_forest", textName: "script_level2", transitionner)
 }

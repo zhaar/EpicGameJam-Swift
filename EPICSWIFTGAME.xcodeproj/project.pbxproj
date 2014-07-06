@@ -51,6 +51,10 @@
 		95FAE0A6196887D70083B21B /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0A5196887D70083B21B /* functions.swift */; };
 		95FAE0A8196887FC0083B21B /* script_intro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0A7196887FC0083B21B /* script_intro.txt */; };
 		95FAE0AA19688C9B0083B21B /* CompositeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0A919688C9B0083B21B /* CompositeText.swift */; };
+		95FAE0AC1968C34C0083B21B /* background_forest.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0AB1968C34C0083B21B /* background_forest.jpeg */; };
+		95FAE0AF1968C6A20083B21B /* background_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0AD1968C6A20083B21B /* background_forest.png */; };
+		95FAE0B01968C6A20083B21B /* background_forest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0AE1968C6A20083B21B /* background_forest@2x.png */; };
+		95FAE0B31968C6D30083B21B /* script_level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0B21968C6D30083B21B /* script_level2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,10 @@
 		95FAE0A5196887D70083B21B /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		95FAE0A7196887FC0083B21B /* script_intro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script_intro.txt; sourceTree = "<group>"; };
 		95FAE0A919688C9B0083B21B /* CompositeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeText.swift; sourceTree = "<group>"; };
+		95FAE0AB1968C34C0083B21B /* background_forest.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_forest.jpeg; sourceTree = "<group>"; };
+		95FAE0AD1968C6A20083B21B /* background_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_forest.png; sourceTree = "<group>"; };
+		95FAE0AE1968C6A20083B21B /* background_forest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_forest@2x.png"; sourceTree = "<group>"; };
+		95FAE0B21968C6D30083B21B /* script_level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script_level2.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,11 +145,14 @@
 		845659101967FA1E001E0CF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				95FAE0B11968C6BD0083B21B /* scripts */,
+				95FAE0AD1968C6A20083B21B /* background_forest.png */,
+				95FAE0AE1968C6A20083B21B /* background_forest@2x.png */,
+				95FAE0AB1968C34C0083B21B /* background_forest.jpeg */,
 				84F88B731968B0FF00BE41D8 /* background_intro.png */,
 				84F88B741968B0FF00BE41D8 /* background_intro@2x.png */,
 				84F88B791968B18B00BE41D8 /* fusee@2x.png */,
 				84F88B751968B0FF00BE41D8 /* destroyer.png */,
-				95FAE0A7196887FC0083B21B /* script_intro.txt */,
 				84F88B4A1968483400BE41D8 /* Sounds */,
 				84F88B3A1968411C00BE41D8 /* laser.wav */,
 				84F88B3C196847DB00BE41D8 /* laser.aiff */,
@@ -263,6 +274,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		95FAE0B11968C6BD0083B21B /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				95FAE0A7196887FC0083B21B /* script_intro.txt */,
+				95FAE0B21968C6D30083B21B /* script_level2.txt */,
+			);
+			name = scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,17 +380,21 @@
 				84F88B481968482A00BE41D8 /* Death5.wav in Resources */,
 				84F88B761968B0FF00BE41D8 /* background_intro.png in Resources */,
 				84F88B6419685A2500BE41D8 /* ship@2x.png in Resources */,
+				95FAE0B31968C6D30083B21B /* script_level2.txt in Resources */,
 				84F88B58196859D800BE41D8 /* monster3@2x.png in Resources */,
 				84F88B57196859D800BE41D8 /* monster2@2x.png in Resources */,
+				95FAE0B01968C6A20083B21B /* background_forest@2x.png in Resources */,
 				84F88B6619685A3800BE41D8 /* laser_munition@2x.png in Resources */,
 				845659121967FA29001E0CF6 /* laser.png in Resources */,
 				84F88B701968663000BE41D8 /* spark.png in Resources */,
 				84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */,
 				84F88B60196859FC00BE41D8 /* dead1@2x.png in Resources */,
+				95FAE0AF1968C6A20083B21B /* background_forest.png in Resources */,
 				95FAE0A8196887FC0083B21B /* script_intro.txt in Resources */,
 				84F88B5C196859D800BE41D8 /* monster7@2x.png in Resources */,
 				84F88B62196859FC00BE41D8 /* dead3@2x.png in Resources */,
 				84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */,
+				95FAE0AC1968C34C0083B21B /* background_forest.jpeg in Resources */,
 				84F88B61196859FC00BE41D8 /* dead2@2x.png in Resources */,
 				84F88B5B196859D800BE41D8 /* monster6@2x.png in Resources */,
 				84F88B441968482A00BE41D8 /* Death1.wav in Resources */,
