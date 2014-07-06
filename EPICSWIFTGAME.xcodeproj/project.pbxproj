@@ -55,6 +55,7 @@
 		95FAE0AF1968C6A20083B21B /* background_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0AD1968C6A20083B21B /* background_forest.png */; };
 		95FAE0B01968C6A20083B21B /* background_forest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0AE1968C6A20083B21B /* background_forest@2x.png */; };
 		95FAE0B31968C6D30083B21B /* script_level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FAE0B21968C6D30083B21B /* script_level2.txt */; };
+		95FAE0B5196940330083B21B /* DecorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FAE0B4196940330083B21B /* DecorElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		95FAE0AD1968C6A20083B21B /* background_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_forest.png; sourceTree = "<group>"; };
 		95FAE0AE1968C6A20083B21B /* background_forest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_forest@2x.png"; sourceTree = "<group>"; };
 		95FAE0B21968C6D30083B21B /* script_level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = script_level2.txt; sourceTree = "<group>"; };
+		95FAE0B4196940330083B21B /* DecorElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecorElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				845659131967FFB2001E0CF6 /* Laser.swift */,
 				8456592D19681ECB001E0CF6 /* SwiftCodeTests.playground */,
 				84F88B6719685B8700BE41D8 /* Enemy.swift */,
+				95FAE0B4196940330083B21B /* DecorElement.swift */,
 				84F88B711968AA8200BE41D8 /* Globals.swift */,
 			);
 			name = EPICSWIFTGAME;
@@ -424,6 +427,7 @@
 				95FAE0A6196887D70083B21B /* functions.swift in Sources */,
 				84F88B6819685B8700BE41D8 /* Enemy.swift in Sources */,
 				95F693D91967101C00EA05B4 /* GameViewController.swift in Sources */,
+				95FAE0B5196940330083B21B /* DecorElement.swift in Sources */,
 				845659141967FFB2001E0CF6 /* Laser.swift in Sources */,
 				84F88B721968AA8200BE41D8 /* Globals.swift in Sources */,
 				95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */,
