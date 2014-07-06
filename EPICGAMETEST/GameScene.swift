@@ -31,12 +31,16 @@ func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
     }
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
     
+    var missiles:Array<SKSpriteNode>
+
     var firstTouch: CGPoint?
     var originalPosition: CGPoint?
 
     let ship: Ship = createShip("fusee")
+    
+    
     let audioPlayer:AVAudioPlayer
     // -- Backgrounds --
     var lowerBackground :SKSpriteNode?
@@ -47,10 +51,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         var backgroundMusicUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "mp3"))
         audioPlayer = AVAudioPlayer(contentsOfURL: backgroundMusicUrl, error: nil)
         audioPlayer.prepareToPlay()
+        self.missiles = []
         super.init(size: size)
     }
     
     override func didMoveToView(view: SKView) {
+        
+        ship.delegate = self
+
         
         setupLevelNode()
         
@@ -125,8 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         println("Touched X: " + String(firstTouch!.x) + " and at Y : " + String(firstTouch!.y))
         
         originalPosition = ship.position
-        ship.startShooting()
-
+        //ship.shootMissile()
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
@@ -209,6 +216,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate {
         blood.position = sender.convertPoint(CGPointZero, toNode: lowerBackground)
         lowerBackground!.addChild(blood)
         
+    }
+    
+    func shipLaunchedMissile(sender: Ship, missile: SKSpriteNode) {
+        missiles.insert(missile, atIndex: 0)
+    }
+
+    // --- Update loop ---
+    
+    override func update(currentTime: NSTimeInterval)
+    {
+        removeMissilesThatAreOutOfBounds()
+    }
+    
+    func removeMissilesThatAreOutOfBounds () {
+        if (missiles.count <= 0) { return; }
+        
+        for missile in missiles {
+            if (missile.position.y) > self.size.height{
+                missiles.removeLast()
+                missile.removeFromParent()
+            }
+        }
+        println(missiles.count)
     }
     
 }

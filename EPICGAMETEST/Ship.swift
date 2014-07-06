@@ -10,15 +10,16 @@ import Foundation
 import SpriteKit
 let PI = 3.1415926535
 
+protocol ShipDelegate {
+    func shipLaunchedMissile(sender: Ship, missile: SKSpriteNode)
+}
+
 class Ship: SKSpriteNode {
     
-    // ------ Physics ------
-    
-    let missileCategory: UInt32 = 1 << 0
-    let shipCategory:    UInt32 = 1 << 1
-    let monsterCategory: UInt32 = 1 << 2
-    
     var isShooting = false
+    
+    var delegate:ShipDelegate?
+    
     let laserSprite:SKSpriteNode = SKSpriteNode(imageNamed: "laser")
     
     func startShooting() {
@@ -35,6 +36,7 @@ class Ship: SKSpriteNode {
     func shootMissile() {
         var missileSprite = SKSpriteNode(imageNamed: "laser_munition")
         missileSprite.position = self.position
+        missileSprite.anchorPoint = CGPointMake(0.5, 0.0)
         self.scene.addChild(missileSprite)
         
         missileSprite.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(missileSprite.size.width, missileSprite.size.height))
@@ -42,18 +44,13 @@ class Ship: SKSpriteNode {
         missileSprite.physicsBody.categoryBitMask = missileCategory
         missileSprite.physicsBody.collisionBitMask = monsterCategory
         missileSprite.physicsBody.contactTestBitMask = monsterCategory
+        missileSprite.physicsBody.pinned = false
+        
         
         missileSprite.physicsBody.applyImpulse(CGVectorMake(0, 10))
+        
+        self.delegate?.shipLaunchedMissile(self, missile: missileSprite)
     }
-//    
-//    func createLaser(scene: SKScene) {
-//        laserSprite = Laser(imageNamed: "laser")
-//        laserSprite.anchorPoint = CGPointMake(0.5, 0.0)
-//        laserSprite.position = CGPointMake(self.size.width * 0.5, 0.0)
-//        laserSprite.size.height = scene.size.height * 2
-//        self.addChild(laserSprite)
-//    }
-    
 }
 
 func getSceneCenter(scene : SKScene) -> CGPoint {
