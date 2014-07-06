@@ -18,3 +18,9 @@ func loadText(fileName: String) -> String[]? {
     }
     return arr
 }
+
+func swapTwoValues<T>(inout a: T, inout b: T) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}

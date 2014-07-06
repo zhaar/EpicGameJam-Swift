@@ -17,14 +17,6 @@ class DecorElement: SKSpriteNode {
         super.init(imageNamed: image)
     }
     
-    func continuouslyRespawn(){
-        self.runAction(SKAction.sequence([
-            SKAction.waitForDuration(respawn()),
-            SKAction.runBlock({
-                
-                })
-            ]))
-    }
 }
 
 func makeCloud() -> SKSpriteNode {
@@ -32,6 +24,5 @@ func makeCloud() -> SKSpriteNode {
 }
 
 func spriteFromIndex(i: Int) -> String {
-    println("generating files \"cloud\(i.description)\"")
     return "could" + i.description
 }
