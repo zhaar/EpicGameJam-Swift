@@ -77,7 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
             placeRandomMonster()
         }*/
         
-        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2})
+        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 10.0)
         
         self.userInteractionEnabled = true
     }
@@ -173,8 +173,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
 //        runAction( SKAction.repeatActionForever(SKAction.sequence(actions)) )
 //    }
     
-    func generateEntityContinuously(assetGenerator: () -> SKSpriteNode ,
-        waitingTimeGenerator: () -> Double){
+    func generateEntityContinuously(
+        assetGenerator: () -> SKSpriteNode ,
+        waitingTimeGenerator: () -> Double,
+        speed: Double){
         let actions = [
             SKAction.waitForDuration(waitingTimeGenerator()),
             SKAction.runBlock({
@@ -189,7 +191,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 //let monsterPointInContentCoordinates = self.contentNode?.convertPoint(monsterPoint, fromNode: self)
                 
                 self.addChild(asset)
-                asset.physicsBody.applyImpulse(CGVectorMake(0.0, -10.0))
+                asset.physicsBody.applyImpulse(CGVectorMake(0.0, CGFloat(-speed)))
                 })]
         runAction( SKAction.repeatActionForever(SKAction.sequence(actions)) )
     }
