@@ -38,6 +38,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     var score: Int = 0
     var scoreLabel: SKLabelNode!
     var killCount:Int = 0
+    var killsNeeded:Int?
+    var secondsRemaining: Int?
+    
+    var secondsRemaningLabel: SKLabelNode!
     
     init(size: CGSize){
         var backgroundMusicUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "mp3"))
@@ -51,11 +55,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         
         ship.delegate = self
 
+        killsNeeded = 20
+        secondsRemaining = 5
+
         self.scoreLabel = SKLabelNode(fontNamed: "Courier")
         scoreLabel.position = CGPointMake(300, 10)
         scoreLabel.text = score.description
         scoreLabel.fontColor = SKColor.blueColor()
         scoreLabel.fontSize = 15
+        
+        self.secondsRemaningLabel = SKLabelNode(fontNamed: "Courier")
+        secondsRemaningLabel.position = CGPointMake(10, 10)
+        secondsRemaningLabel.text = secondsRemaining.description
+        secondsRemaningLabel.fontColor = SKColor.blueColor()
+        secondsRemaningLabel.fontSize = 15
         
         setupLevelNode()
         
@@ -73,7 +86,74 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 120.0)
         generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
         self.addChild(scoreLabel)
+        self.addChild(secondsRemaningLabel)
         self.userInteractionEnabled = true
+        
+        startCountDown()
+    }
+    
+    func startCountDown() {
+        
+        var actions = [
+        SKAction.waitForDuration(1.0),
+        SKAction.runBlock({
+            self.secondsRemaining = self.secondsRemaining! - 1
+            self.secondsRemaningLabel.text = self.secondsRemaining!.description
+            if (self.secondsRemaining <= 0)
+            {
+                if (self.killCount >= self.killsNeeded){
+                    self.win()
+                }
+                else {
+                    self.lose()
+                }
+            }
+        })]
+        
+        self.runAction( SKAction.repeatAction(SKAction.sequence(actions), count: self.secondsRemaining!))
+    }
+    
+    func lose() {
+        self.userInteractionEnabled = false
+        showGameOverMessage("Lost. restarting ..")
+        
+        self.runAction(
+            SKAction.sequence([
+            SKAction.waitForDuration(5.0),
+            SKAction.runBlock({
+                self.view.presentScene(GameScene(size: self.size))
+            })]
+            )
+        )
+    }
+    
+    func win() {
+        self.userInteractionEnabled = false
+        showGameOverMessage("Next lvl ..")
+        
+        // TODO add the correct thing
+        
+        self.runAction(
+            SKAction.sequence([
+                SKAction.waitForDuration(5.0),
+                SKAction.runBlock({
+                    self.view.presentScene(makeIntroScene(self.size))
+                    })]
+            )
+        )
+    }
+    
+    
+    func showGameOverMessage(gameOverMessage: String) {
+        let messageLabel = SKLabelNode(fontNamed: "Courier")
+        messageLabel.text = gameOverMessage
+        messageLabel.fontColor = SKColor.blackColor()
+        messageLabel.fontSize = 20
+        
+        messageLabel.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5)
+        
+        self.addChild(messageLabel)
+        
     }
     
     func setupLevelNode() {
