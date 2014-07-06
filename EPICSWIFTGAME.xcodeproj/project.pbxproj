@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84213E7719696FFB00619E22 /* laser_shooting_sfx.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84213E7619696FFB00619E22 /* laser_shooting_sfx.wav */; };
 		845659121967FA29001E0CF6 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659111967FA29001E0CF6 /* laser.png */; };
 		845659141967FFB2001E0CF6 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659131967FFB2001E0CF6 /* Laser.swift */; };
 		846D4C8C196964BF00F7E6E8 /* cloud2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846D4C8B196964BF00F7E6E8 /* cloud2@2x.png */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84213E7619696FFB00619E22 /* laser_shooting_sfx.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_shooting_sfx.wav; sourceTree = "<group>"; };
 		845659111967FA29001E0CF6 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
 		845659131967FFB2001E0CF6 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		8456592D19681ECB001E0CF6 /* SwiftCodeTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftCodeTests.playground; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		84F88B4A1968483400BE41D8 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				84213E7619696FFB00619E22 /* laser_shooting_sfx.wav */,
 				84F88B3E1968482A00BE41D8 /* Death1.wav */,
 				84F88B3F1968482A00BE41D8 /* Death 2.wav */,
 				84F88B401968482A00BE41D8 /* Death 3.wav */,
@@ -407,6 +410,7 @@
 				84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */,
 				95FAE0AC1968C34C0083B21B /* background_forest.jpeg in Resources */,
 				84F88B61196859FC00BE41D8 /* dead2@2x.png in Resources */,
+				84213E7719696FFB00619E22 /* laser_shooting_sfx.wav in Resources */,
 				84F88B5B196859D800BE41D8 /* monster6@2x.png in Resources */,
 				84F88B441968482A00BE41D8 /* Death1.wav in Resources */,
 				84F88B491968482A00BE41D8 /* Death6.wav in Resources */,

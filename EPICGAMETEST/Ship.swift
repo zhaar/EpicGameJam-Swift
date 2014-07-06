@@ -16,9 +16,11 @@ protocol ShipDelegate {
 
 class Ship: SKSpriteNode {
     
+    var lastTimeRanUpdateLoop: NSTimeInterval = NSDate.timeIntervalSinceReferenceDate()
+    /*
     @lazy var lastTimeRanUpdateLoop: NSTimeInterval = {
         return CFAbsoluteTimeGetCurrent()
-    }()
+    }()*/
     
     var isShooting = false
     var delegate:ShipDelegate?
@@ -33,6 +35,8 @@ class Ship: SKSpriteNode {
     }
     
     func shootMissile() {
+        
+        runAction(SKAction.playSoundFileNamed("laser_shooting_sfx.wav", waitForCompletion: false))
         var missileSprite = SKSpriteNode(imageNamed: "laser_munition")
         missileSprite.position = self.position
         missileSprite.anchorPoint = CGPointMake(0.5, 0.0)
@@ -52,9 +56,11 @@ class Ship: SKSpriteNode {
     
     func update(currentTime: NSTimeInterval)
     {
-        var deltaTime = lastTimeRanUpdateLoop - currentTime
-        if (deltaTime > 0.2 && isShooting) {
+        println("latstTimeRanUpdateLoop \(lastTimeRanUpdateLoop) currentTime \(currentTime) ")
+        var deltaTime = currentTime - lastTimeRanUpdateLoop
+        if (deltaTime > 0.1 && isShooting) {
             shootMissile()
+            lastTimeRanUpdateLoop = NSDate.timeIntervalSinceReferenceDate()
         }
     }
 }
@@ -78,6 +84,7 @@ func createShip(image: String) -> Ship {
     
     ship.anchorPoint = CGPoint(x:0.5, y:1.0)
 
+    ship.color = SKColor.redColor()
     
     return ship
 }

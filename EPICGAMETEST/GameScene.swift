@@ -119,7 +119,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         contentNode!.runAction(bgSequence)
     }
     
-    
     // ----- User interaction -----
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -269,7 +268,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     
     override func update(currentTime: NSTimeInterval)
     {
-        ship.update(currentTime)
+        ship.update( NSDate.timeIntervalSinceReferenceDate())
         removeMissilesThatAreOutOfBounds()
     }
     
