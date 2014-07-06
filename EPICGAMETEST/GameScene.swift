@@ -60,20 +60,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     override func didMoveToView(view: SKView) {
         
         ship.delegate = self
+
         self.scoreLabel = SKLabelNode(fontNamed: "Courier")
         scoreLabel.position = CGPointMake(160, 20)
-        scoreLabel.text = score.description
-        
+        scoreLabel.text = score.description        
         setupLevelNode()
         
         placeInScene(ship, self)
         
         audioPlayer.play()
-        
-        /* --- Ship does not really need a physics body
-        ship.physicsBody.categoryBitMask  = shipCategory
-        ship.physicsBody.collisionBitMask = shipCategory
-        */
         
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0)
         self.physicsWorld.contactDelegate = self
@@ -82,8 +77,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
             placeRandomMonster()
         }*/
         
-        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 12.0)
-        generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 10)
+        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 120.0)
+        generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
         
         self.userInteractionEnabled = true
     }
@@ -252,7 +247,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 let diff = ship.position - monster.position
                 monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
                 monster.hit()
+
                 score+=10
+
+        } else if ( bodyA.categoryBitMask == enemyProjectileCategory && bodyB.categoryBitMask == shipCategory ) {
+            
+            var enemyProjectile = bodyA.node as SKSpriteNode
+            enemyProjectile.removeFromParent()
+            // TODO reduce ship life
+
         }
 
 //        switch bodyA.node {

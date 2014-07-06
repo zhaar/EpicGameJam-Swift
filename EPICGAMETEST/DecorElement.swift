@@ -20,9 +20,13 @@ class DecorElement: SKSpriteNode {
 }
 
 func makeCloud() -> SKSpriteNode {
-    return SKSpriteNode(imageNamed: spriteFromIndex(Int(rand() % 2)))
+    let cloud = SKSpriteNode(imageNamed: spriteFromIndex(Int(rand() % 2) + 1))
+    cloud.xScale = 0.4
+    cloud.yScale = 0.4
+    cloud.alpha = 0.4
+    return cloud
 }
 
 func spriteFromIndex(i: Int) -> String {
-    return "could" + i.description
+    return "cloud" + i.description
 }

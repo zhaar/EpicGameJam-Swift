@@ -65,9 +65,20 @@ func getSceneCenter(scene : SKScene) -> CGPoint {
 
 func createShip(image: String) -> Ship {
     let ship = Ship(imageNamed: image)
-    ship.anchorPoint = CGPoint(x:0.5, y:1.0)
+
+    ship.anchorPoint = CGPoint(x:0.5, y:0.5)
     ship.xScale = 0.6
     ship.yScale = 0.6
+    
+    ship.physicsBody = SKPhysicsBody(circleOfRadius: ship.size.height * 0.4, center: CGPointMake(0.0, -ship.size.height * 0.5))
+    
+    ship.physicsBody.categoryBitMask = shipCategory
+    ship.physicsBody.collisionBitMask = 0
+    ship.physicsBody.contactTestBitMask = enemyProjectileCategory
+    
+    ship.anchorPoint = CGPoint(x:0.5, y:1.0)
+
+    
     return ship
 }
 

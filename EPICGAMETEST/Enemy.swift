@@ -32,16 +32,15 @@ class Enemy : SKSpriteNode {
     }
     
     func shootInDirection(directionVector :CGVector){
-        println("the direction vector " + String(directionVector.dx)  + " y : " + String(directionVector.dy))
         
         var projectile = SKSpriteNode(imageNamed: "dead3")
         projectile.position = self.position
         
         projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20.0)
         
-        projectile.physicsBody.categoryBitMask = 0
+        projectile.physicsBody.categoryBitMask = enemyProjectileCategory
         projectile.physicsBody.collisionBitMask = 0
-        projectile.physicsBody.contactTestBitMask = 0
+        projectile.physicsBody.contactTestBitMask = enemyProjectileCategory
         
         self.scene.addChild(projectile)
         
@@ -85,14 +84,17 @@ func makeEnemy(withIndex i:Int) -> Enemy {
     e.hitPoints = getHpForIndex(i)
     
     e.physicsBody = SKPhysicsBody(rectangleOfSize: e.size)
+
     let p = e.physicsBody
     p.categoryBitMask = monsterCategory
     p.collisionBitMask = 0
     p.contactTestBitMask = missileCategory
     p.mass = CGFloat(0)
     p.linearDamping = CGFloat(0)
+
     e.xScale = 0.4;
     e.yScale = 0.4;
+
     return e
 }
 
@@ -104,5 +106,6 @@ func getHpForIndex(index: Int) -> Int{
 }
 
 func makeRandomEnemy() -> Enemy {
-    return makeEnemy(withIndex: Int(rand() % 6))
+    return makeEnemy(withIndex: Int(rand() % 6) + 1)
+
 }

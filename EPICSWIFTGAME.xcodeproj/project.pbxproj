@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		845659121967FA29001E0CF6 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 845659111967FA29001E0CF6 /* laser.png */; };
 		845659141967FFB2001E0CF6 /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659131967FFB2001E0CF6 /* Laser.swift */; };
+		846D4C8C196964BF00F7E6E8 /* cloud2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846D4C8B196964BF00F7E6E8 /* cloud2@2x.png */; };
+		84A88BD41969612E0018DA0A /* cloud1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A88BD21969612E0018DA0A /* cloud1@2x.png */; };
 		84F88B39196840BE00BE41D8 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B38196840BE00BE41D8 /* backgroundMusic.mp3 */; };
 		84F88B3B1968411C00BE41D8 /* laser.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3A1968411C00BE41D8 /* laser.wav */; };
 		84F88B3D196847DB00BE41D8 /* laser.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B3C196847DB00BE41D8 /* laser.aiff */; };
@@ -41,8 +43,6 @@
 		84F88B7A1968B18B00BE41D8 /* fusee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B791968B18B00BE41D8 /* fusee@2x.png */; };
 		955003D019675B4C00743A4A /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955003CF19675B4C00743A4A /* Ship.swift */; };
 		9580E84119688314004A3818 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9580E84019688314004A3818 /* IntroScene.swift */; };
-		95C2ECBC196958F200CC36D5 /* cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C2ECBB196958F200CC36D5 /* cloud1.png */; };
-		95C2ECBE196958F900CC36D5 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C2ECBD196958F900CC36D5 /* cloud2.png */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
 		95F693D71967101C00EA05B4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D61967101C00EA05B4 /* GameScene.swift */; };
@@ -74,6 +74,8 @@
 		845659111967FA29001E0CF6 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
 		845659131967FFB2001E0CF6 /* Laser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
 		8456592D19681ECB001E0CF6 /* SwiftCodeTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftCodeTests.playground; sourceTree = "<group>"; };
+		846D4C8B196964BF00F7E6E8 /* cloud2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud2@2x.png"; sourceTree = "<group>"; };
+		84A88BD21969612E0018DA0A /* cloud1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud1@2x.png"; sourceTree = "<group>"; };
 		84F88B38196840BE00BE41D8 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		84F88B3A1968411C00BE41D8 /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
 		84F88B3C196847DB00BE41D8 /* laser.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = laser.aiff; sourceTree = "<group>"; };
@@ -107,8 +109,6 @@
 		955003B619674D7B00743A4A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		955003CF19675B4C00743A4A /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		9580E84019688314004A3818 /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
-		95C2ECBB196958F200CC36D5 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud1.png; sourceTree = "<group>"; };
-		95C2ECBD196958F900CC36D5 /* cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud2.png; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F693D11967101C00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693D21967101C00EA05B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 		845659101967FA1E001E0CF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				95C2ECBD196958F900CC36D5 /* cloud2.png */,
-				95C2ECBB196958F200CC36D5 /* cloud1.png */,
+				84A88BD21969612E0018DA0A /* cloud1@2x.png */,
+				846D4C8B196964BF00F7E6E8 /* cloud2@2x.png */,
 				95FAE0B11968C6BD0083B21B /* scripts */,
 				95FAE0AD1968C6A20083B21B /* background_forest.png */,
 				95FAE0AE1968C6A20083B21B /* background_forest@2x.png */,
@@ -377,7 +377,6 @@
 				84F88B451968482A00BE41D8 /* Death 2.wav in Resources */,
 				95F693DE1967101C00EA05B4 /* Images.xcassets in Resources */,
 				84F88B3B1968411C00BE41D8 /* laser.wav in Resources */,
-				95C2ECBC196958F200CC36D5 /* cloud1.png in Resources */,
 				84F88B59196859D800BE41D8 /* monster4@2x.png in Resources */,
 				84F88B471968482A00BE41D8 /* Death4.wav in Resources */,
 				84F88B461968482A00BE41D8 /* Death 3.wav in Resources */,
@@ -400,12 +399,13 @@
 				84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */,
 				84F88B60196859FC00BE41D8 /* dead1@2x.png in Resources */,
 				95FAE0AF1968C6A20083B21B /* background_forest.png in Resources */,
+				84A88BD41969612E0018DA0A /* cloud1@2x.png in Resources */,
 				95FAE0A8196887FC0083B21B /* script_intro.txt in Resources */,
 				84F88B5C196859D800BE41D8 /* monster7@2x.png in Resources */,
 				84F88B62196859FC00BE41D8 /* dead3@2x.png in Resources */,
+				846D4C8C196964BF00F7E6E8 /* cloud2@2x.png in Resources */,
 				84F88B56196859D800BE41D8 /* monster1@2x.png in Resources */,
 				95FAE0AC1968C34C0083B21B /* background_forest.jpeg in Resources */,
-				95C2ECBE196958F900CC36D5 /* cloud2.png in Resources */,
 				84F88B61196859FC00BE41D8 /* dead2@2x.png in Resources */,
 				84F88B5B196859D800BE41D8 /* monster6@2x.png in Resources */,
 				84F88B441968482A00BE41D8 /* Death1.wav in Resources */,
