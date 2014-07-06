@@ -11,16 +11,6 @@ import Foundation
 import AVFoundation
 import AudioToolbox
 
-@infix func - (left: CGPoint, right: CGPoint) -> CGPoint {
-    return CGPointMake(left.x - right.x,
-        left.y - right.y)
-}
-
-@infix func + (left: CGPoint, right: CGPoint) -> CGPoint {
-    return CGPointMake(left.x + right.x,
-        left.y + right.y)
-}
-
 func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
     if( value > max ) {
         return max
@@ -45,6 +35,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     var lowerBackground :SKSpriteNode?
     var higherBackground :SKSpriteNode?
     var contentNode: SKNode?
+    var score: Int = 0
+    var scoreLabel: SKLabelNode!
+    var killCount:Int = 0
     
     init(size: CGSize){
         var backgroundMusicUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "mp3"))
@@ -57,7 +50,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     override func didMoveToView(view: SKView) {
         
         ship.delegate = self
-        
+
+        self.scoreLabel = SKLabelNode(fontNamed: "Courier")
+        scoreLabel.position = CGPointMake(300, 10)
+        scoreLabel.text = score.description
+        scoreLabel.fontColor = SKColor.blueColor()
+        scoreLabel.fontSize = 15
         
         setupLevelNode()
         
@@ -74,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         
         generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 120.0)
         generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
-        
+        self.addChild(scoreLabel)
         self.userInteractionEnabled = true
     }
     
@@ -227,13 +225,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         var bodyB = contact.bodyB
         
         if (bodyA.categoryBitMask < bodyB.categoryBitMask){
-            var temp = bodyA
-            bodyA = bodyB
-            bodyB = temp
+            swapTwoValues(&bodyA, &bodyB)
         }
         
-        if (bodyA.categoryBitMask == missileCategory && bodyB.categoryBitMask == monsterCategory ||
-            bodyB.categoryBitMask == missileCategory && bodyA.categoryBitMask == monsterCategory ) {
+        if (bodyA.categoryBitMask == missileCategory &&
+            bodyB.categoryBitMask == monsterCategory ||
+            bodyB.categoryBitMask == missileCategory &&
+            bodyA.categoryBitMask == monsterCategory ) {
 
                 var monster = bodyA.node as Enemy
                 bodyB.node.removeFromParent()
@@ -241,18 +239,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 let diff = ship.position - monster.position
                 monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
                 monster.hit()
+
+                score+=10
+
         } else if ( bodyA.categoryBitMask == enemyProjectileCategory && bodyB.categoryBitMask == shipCategory ) {
             
             var enemyProjectile = bodyA.node as SKSpriteNode
             enemyProjectile.removeFromParent()
             // TODO reduce ship life
+
         }
+
+//        switch bodyA.node {
+//        case let monster as Enemy :
+//            bodyB.node.removeFromParent()
+//            
+//            let diff = ship.position - monster.position
+//            monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
+//            monster.hit()
+//        default: println(bodyA.description)
+//        }
     }
     
     // --- Enemy delegate methods ---
     
     func enemyDidExplode(sender: Enemy) {
-        
+        score += 100
         var blood = SKSpriteNode(imageNamed: "dead1")
         blood.position = sender.convertPoint(CGPointZero, toNode: lowerBackground)
         lowerBackground!.addChild(blood)
@@ -268,7 +280,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     
     override func update(currentTime: NSTimeInterval)
     {
+        scoreLabel.text = score.description
         ship.update( NSDate.timeIntervalSinceReferenceDate())
+        ship.update(currentTime)
         removeMissilesThatAreOutOfBounds()
     }
     

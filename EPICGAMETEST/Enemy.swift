@@ -81,7 +81,7 @@ func makeSquidEnemy() -> Enemy {
 
 func makeEnemy(withIndex i:Int) -> Enemy {
     let e = Enemy(imageNamed: "monster" + i.description)
-    e.hitPoints = 10
+    e.hitPoints = getHpForIndex(i)
     
     e.physicsBody = SKPhysicsBody(rectangleOfSize: e.size)
 
@@ -96,6 +96,13 @@ func makeEnemy(withIndex i:Int) -> Enemy {
     e.yScale = 0.4;
 
     return e
+}
+
+func getHpForIndex(index: Int) -> Int{
+    switch index {
+    case 0, 1, 2, 3, 4, 5: return 10
+    default: return 20
+    }
 }
 
 func makeRandomEnemy() -> Enemy {

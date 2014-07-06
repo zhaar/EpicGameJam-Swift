@@ -56,7 +56,6 @@ class Ship: SKSpriteNode {
     
     func update(currentTime: NSTimeInterval)
     {
-        println("latstTimeRanUpdateLoop \(lastTimeRanUpdateLoop) currentTime \(currentTime) ")
         var deltaTime = currentTime - lastTimeRanUpdateLoop
         if (deltaTime > 0.1 && isShooting) {
             shootMissile()
@@ -73,10 +72,13 @@ func createShip(image: String) -> Ship {
     let ship = Ship(imageNamed: image)
 
     ship.anchorPoint = CGPoint(x:0.5, y:0.5)
+    let hitPoint = SKSpriteNode(imageNamed:"hitbox")
+    hitPoint.position = CGPointMake(-6,-ship.size.height * 0.25)
     ship.xScale = 0.6
     ship.yScale = 0.6
+    ship.addChild(hitPoint)
     
-    ship.physicsBody = SKPhysicsBody(circleOfRadius: ship.size.height * 0.4, center: CGPointMake(0.0, -ship.size.height * 0.5))
+    ship.physicsBody = SKPhysicsBody(circleOfRadius: hitPoint.size.width/2, center: CGPointMake(-6,-ship.size.height * 0.25))
     
     ship.physicsBody.categoryBitMask = shipCategory
     ship.physicsBody.collisionBitMask = 0
