@@ -42,6 +42,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     var secondsRemaining: Int?
     
     var secondsRemaningLabel: SKLabelNode!
+    var monstersRemainingLabel: SKLabelNode!
+    
     
     init(size: CGSize){
         var backgroundMusicUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "mp3"))
@@ -70,6 +72,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         secondsRemaningLabel.fontColor = SKColor.blueColor()
         secondsRemaningLabel.fontSize = 15
         
+        self.monstersRemainingLabel = SKLabelNode(fontNamed: "Courier")
+        monstersRemainingLabel.position = CGPointMake(self.scene.size.width*0.5 , 10)
+        monstersRemainingLabel.text = String(killsNeeded! - killCount) + " left"
+        monstersRemainingLabel.fontColor = SKColor.blackColor()
+        monstersRemainingLabel.fontSize = 15
+        
         setupLevelNode()
         
         placeInScene(ship, self)
@@ -87,6 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
         self.addChild(scoreLabel)
         self.addChild(secondsRemaningLabel)
+        self.addChild(monstersRemainingLabel)
         self.userInteractionEnabled = true
         
         startCountDown()
@@ -137,7 +146,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
             SKAction.sequence([
                 SKAction.waitForDuration(5.0),
                 SKAction.runBlock({
-                    self.view.presentScene(makeIntroScene(self.size))
+                    self.view.presentScene(level2Intro(self.size))
                     })]
             )
         )
@@ -345,6 +354,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     
     func enemyDidExplode(sender: Enemy) {
         score += 100
+        killCount += 1
         var blood = SKSpriteNode(imageNamed: "dead1")
         blood.position = sender.convertPoint(CGPointZero, toNode: lowerBackground)
         lowerBackground!.addChild(blood)
@@ -360,7 +370,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     
     override func update(currentTime: NSTimeInterval)
     {
+        // TODO -- do this in a setter
         scoreLabel.text = score.description
+        monstersRemainingLabel.text = String(killsNeeded! - killCount) + " left"
+
+        
+        
         ship.update( NSDate.timeIntervalSinceReferenceDate())
         ship.update(currentTime)
         removeMissilesThatAreOutOfBounds()
