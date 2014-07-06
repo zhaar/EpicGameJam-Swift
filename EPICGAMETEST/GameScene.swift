@@ -77,7 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
             placeRandomMonster()
         }*/
         
-        generateEntityContinuously(makeSquidEnemy, waitingTimeGenerator: {2})
+        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2})
         
         self.userInteractionEnabled = true
     }
