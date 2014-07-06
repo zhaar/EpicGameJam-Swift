@@ -9,3 +9,4 @@
 let missileCategory: UInt32 = 1 << 0
 let shipCategory:    UInt32 = 1 << 1
 let monsterCategory: UInt32 = 1 << 2
+let enemyProjectileCategory: UInt32 = 1 << 3

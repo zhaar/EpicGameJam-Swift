@@ -57,18 +57,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     override func didMoveToView(view: SKView) {
         
         ship.delegate = self
-
+        
         
         setupLevelNode()
         
         placeInScene(ship, self)
         
         audioPlayer.play()
-        
-        /* --- Ship does not really need a physics body
-        ship.physicsBody.categoryBitMask  = shipCategory
-        ship.physicsBody.collisionBitMask = shipCategory
-        */
         
         self.physicsWorld.gravity = CGVectorMake(0.0, 0.0)
         self.physicsWorld.contactDelegate = self
@@ -254,7 +249,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 let diff = ship.position - monster.position
                 monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
                 monster.hit()
-                
+        } else if ( bodyA.categoryBitMask == enemyProjectileCategory && bodyB.categoryBitMask == shipCategory ) {
+            
+            var enemyProjectile = bodyA.node as SKSpriteNode
+            enemyProjectile.removeFromParent()
+            // TODO reduce ship life
         }
     }
     

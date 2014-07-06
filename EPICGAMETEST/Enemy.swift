@@ -32,16 +32,15 @@ class Enemy : SKSpriteNode {
     }
     
     func shootInDirection(directionVector :CGVector){
-        println("the direction vector " + String(directionVector.dx)  + " y : " + String(directionVector.dy))
         
         var projectile = SKSpriteNode(imageNamed: "dead3")
         projectile.position = self.position
         
         projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20.0)
         
-        projectile.physicsBody.categoryBitMask = 0
+        projectile.physicsBody.categoryBitMask = enemyProjectileCategory
         projectile.physicsBody.collisionBitMask = 0
-        projectile.physicsBody.contactTestBitMask = 0
+        projectile.physicsBody.contactTestBitMask = enemyProjectileCategory
         
         self.scene.addChild(projectile)
         
@@ -81,10 +80,12 @@ func makeSquidEnemy() -> Enemy {
     e.hitPoints = 10
     
     e.physicsBody = SKPhysicsBody(rectangleOfSize: e.size)
-    
     e.physicsBody.categoryBitMask = monsterCategory
     e.physicsBody.collisionBitMask = 0
     e.physicsBody.contactTestBitMask = missileCategory
+    
+    e.physicsBody.friction = 0.0
+    e.physicsBody.affectedByGravity = false
     
     e.xScale = 0.4;
     e.yScale = 0.4;
