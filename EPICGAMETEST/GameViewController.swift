@@ -30,7 +30,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         var introScene = level2Intro(view.frame.size)
-        var skView = self.view as SKView        
+//        var introScene = makeIntroScene(view.frame.size)
+        var skView = self.view as SKView
         skView.presentScene(introScene)
 
 /* game

@@ -21,15 +21,14 @@ class CompositeText: SKNode{
             labels += labelWithLine(text: l)
         }
         for l2 in labels {
-            l2.alpha = 0;
-            println("text: \(l2.text), x: \(l2.position.x), y: \(l2.position.y)")
+            l2.alpha = 0
             scene.addChild(l2)
         }
     }
     
     func displayNext(fade: NSTimeInterval) -> Bool{
         if currentIndex < labels.count {
-            labels[currentIndex].runAction(SKAction.fadeAlphaTo(1, duration: fade))
+            labels[currentIndex].runAction(SKAction.fadeAlphaTo(1, duration: 0))
             if ++currentIndex < labels.count {
                 if labels[currentIndex].text.hasSuffix(".") {
                     return displayNext(fade)
@@ -38,14 +37,7 @@ class CompositeText: SKNode{
             return true
         }else{ return false }
     }
-    
-//    func displayAll(timeOffset: NSTimeInterval, duration: NSTimeInterval){
-//        println("displaying line \(labels[currentIndex])")
-//        self.runAction(SKAction.sequence([
-//            SKAction.waitForDuration(timeOffset),
-//            SKAction.runBlock({self.displayNext(duration);
-//                self.displayAll(timeOffset, duration: duration)})]))
-//    }
+
     
     func progress() -> Float{
         return Float(self.currentIndex)/Float(labels.endIndex)

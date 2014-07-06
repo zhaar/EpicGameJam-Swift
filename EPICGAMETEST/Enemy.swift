@@ -85,11 +85,12 @@ func makeEnemy(withIndex i:Int) -> Enemy {
     e.hitPoints = 10
     
     e.physicsBody = SKPhysicsBody(rectangleOfSize: e.size)
-    
-    e.physicsBody.categoryBitMask = monsterCategory
-    e.physicsBody.collisionBitMask = 0
-    e.physicsBody.contactTestBitMask = missileCategory
-    
+    let p = e.physicsBody
+    p.categoryBitMask = monsterCategory
+    p.collisionBitMask = 0
+    p.contactTestBitMask = missileCategory
+    p.mass = CGFloat(0)
+    p.linearDamping = CGFloat(0)
     e.xScale = 0.4;
     e.yScale = 0.4;
     return e

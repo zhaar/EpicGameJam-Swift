@@ -77,7 +77,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
             placeRandomMonster()
         }*/
         
-        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 10.0)
+        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 12.0)
+        generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 10)
         
         self.userInteractionEnabled = true
     }
@@ -153,25 +154,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         ship.stopShooting()
     }
     
-    // ----- Monster generation -----
-    
-//    func generateMonstersContinously() {
-//        
-//        let actions = [
-//            SKAction.waitForDuration(2.0),
-//            SKAction.runBlock({
-//                // TODO factory method / config for lvls etc ... ?
-//                let monster = makeSquidEnemy()
-//                monster.delegate = self
-//                let monsterPoint = self.generateRandPoinOnTopOfScreenForSprite(monster)
-//                monster.position = monsterPoint
-//                //let monsterPointInContentCoordinates = self.contentNode?.convertPoint(monsterPoint, fromNode: self)
-//                
-//                self.addChild(monster)
-//                monster.physicsBody.applyImpulse(CGVectorMake(0.0, -10.0))
-//            })]
-//        runAction( SKAction.repeatActionForever(SKAction.sequence(actions)) )
-//    }
+    //Entities generation
     
     func generateEntityContinuously(
         assetGenerator: () -> SKSpriteNode ,
@@ -184,7 +167,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 let asset = assetGenerator()
                 switch asset {
                 case let e as Enemy : e.delegate = self
-                default: println("no enemy to delegate to")
+                default: asset.physicsBody = SKPhysicsBody(rectangleOfSize: asset.size);
+                    let p = asset.physicsBody
+
+                    p.collisionBitMask = 0
+                    p.categoryBitMask = 0
+                    p.contactTestBitMask = 0
+                    p.friction = CGFloat(0)
+                p.mass = CGFloat(0)
+                p.linearDamping = CGFloat(0)
                 }
                 let point = self.generateRandPoinOnTopOfScreenForSprite(asset)
                 asset.position = point

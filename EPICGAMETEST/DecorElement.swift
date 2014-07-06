@@ -27,10 +27,11 @@ class DecorElement: SKSpriteNode {
     }
 }
 
-func makeCloud(type: Int, respawnRate: () -> Double) -> DecorElement {
-    return DecorElement(image: spriteFromIndex(type), {5.0 + Double(arc4random_uniform(4))})
+func makeCloud() -> SKSpriteNode {
+    return SKSpriteNode(imageNamed: spriteFromIndex(Int(rand() % 2)))
 }
 
 func spriteFromIndex(i: Int) -> String {
+    println("generating files \"cloud\(i.description)\"")
     return "could" + i.description
 }
