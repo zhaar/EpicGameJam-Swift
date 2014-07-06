@@ -92,11 +92,13 @@ func makeEnemy(withIndex i:Int) -> Enemy {
     p.mass = CGFloat(0)
     p.linearDamping = CGFloat(0)
 
-    e.xScale = 0.6;
-    e.yScale = 0.6;
+    e.xScale = 0.4;
+    e.yScale = 0.4;
+
     return e
 }
 
 func makeRandomEnemy() -> Enemy {
     return makeEnemy(withIndex: Int(rand() % 6) + 1)
+
 }
