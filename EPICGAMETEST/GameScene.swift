@@ -229,7 +229,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
 
                 var monster = bodyA.node as Enemy
                 bodyB.node.removeFromParent()
+                
+                let diff = ship.position - monster.position
+                monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
                 monster.hit()
+                
         }
     }
     

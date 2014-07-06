@@ -30,7 +30,25 @@ class Enemy : SKSpriteNode {
             explode()
         }
     }
+    
+    func shootInDirection(directionVector :CGVector){
+        println("the direction vector " + String(directionVector.dx)  + " y : " + String(directionVector.dy))
+        
+        var projectile = SKSpriteNode(imageNamed: "dead3")
+        projectile.position = self.position
+        
+        projectile.physicsBody = SKPhysicsBody(circleOfRadius: 20.0)
+        
+        projectile.physicsBody.categoryBitMask = 0
+        projectile.physicsBody.collisionBitMask = 0
+        projectile.physicsBody.contactTestBitMask = 0
+        
+        self.scene.addChild(projectile)
+        
+        projectile.physicsBody.applyImpulse(directionVector)
 
+    }
+    
     func gotHit() {
         runAction(SKAction.playSoundFileNamed("Death4.wav", waitForCompletion: false))
     }

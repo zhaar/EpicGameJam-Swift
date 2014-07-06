@@ -21,9 +21,7 @@ class Ship: SKSpriteNode {
     }()
     
     var isShooting = false
-    
     var delegate:ShipDelegate?
-    
     let laserSprite:SKSpriteNode = SKSpriteNode(imageNamed: "laser")
     
     func startShooting() {
