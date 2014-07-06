@@ -11,16 +11,6 @@ import Foundation
 import AVFoundation
 import AudioToolbox
 
-@infix func - (left: CGPoint, right: CGPoint) -> CGPoint {
-    return CGPointMake(left.x - right.x,
-        left.y - right.y)
-}
-
-@infix func + (left: CGPoint, right: CGPoint) -> CGPoint {
-    return CGPointMake(left.x + right.x,
-        left.y + right.y)
-}
-
 func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
     if( value > max ) {
         return max
@@ -63,7 +53,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
 
         self.scoreLabel = SKLabelNode(fontNamed: "Courier")
         scoreLabel.position = CGPointMake(160, 20)
-        scoreLabel.text = score.description        
+        scoreLabel.text = score.description
+        self.addChild(scoreLabel)
         setupLevelNode()
         
         placeInScene(ship, self)
