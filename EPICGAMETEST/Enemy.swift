@@ -76,19 +76,27 @@ class Enemy : SKSpriteNode {
 }
 
 func makeSquidEnemy() -> Enemy {
-    let e = Enemy(imageNamed: "monster2")
+    return makeEnemy(withIndex: 2)
+}
+
+func makeEnemy(withIndex i:Int) -> Enemy {
+    let e = Enemy(imageNamed: "monster" + i.description)
     e.hitPoints = 10
     
     e.physicsBody = SKPhysicsBody(rectangleOfSize: e.size)
-    e.physicsBody.categoryBitMask = monsterCategory
-    e.physicsBody.collisionBitMask = 0
-    e.physicsBody.contactTestBitMask = missileCategory
-    
-    e.physicsBody.friction = 0.0
-    e.physicsBody.affectedByGravity = false
-    
-    e.xScale = 0.4;
-    e.yScale = 0.4;
-    
+
+    let p = e.physicsBody
+    p.categoryBitMask = monsterCategory
+    p.collisionBitMask = 0
+    p.contactTestBitMask = missileCategory
+    p.mass = CGFloat(0)
+    p.linearDamping = CGFloat(0)
+
+    e.xScale = 0.6;
+    e.yScale = 0.6;
     return e
+}
+
+func makeRandomEnemy() -> Enemy {
+    return makeEnemy(withIndex: Int(rand() % 6) + 1)
 }

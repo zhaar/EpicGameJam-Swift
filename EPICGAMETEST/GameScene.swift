@@ -72,7 +72,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
             placeRandomMonster()
         }*/
         
-        generateEntityContinuously(makeSquidEnemy, waitingTimeGenerator: {2})
+        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 120.0)
+        generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
         
         self.userInteractionEnabled = true
     }
@@ -148,28 +149,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         ship.stopShooting()
     }
     
-    // ----- Monster generation -----
+    //Entities generation
     
-//    func generateMonstersContinously() {
-//        
-//        let actions = [
-//            SKAction.waitForDuration(2.0),
-//            SKAction.runBlock({
-//                // TODO factory method / config for lvls etc ... ?
-//                let monster = makeSquidEnemy()
-//                monster.delegate = self
-//                let monsterPoint = self.generateRandPoinOnTopOfScreenForSprite(monster)
-//                monster.position = monsterPoint
-//                //let monsterPointInContentCoordinates = self.contentNode?.convertPoint(monsterPoint, fromNode: self)
-//                
-//                self.addChild(monster)
-//                monster.physicsBody.applyImpulse(CGVectorMake(0.0, -10.0))
-//            })]
-//        runAction( SKAction.repeatActionForever(SKAction.sequence(actions)) )
-//    }
-    
-    func generateEntityContinuously(assetGenerator: () -> SKSpriteNode ,
-        waitingTimeGenerator: () -> Double){
+    func generateEntityContinuously(
+        assetGenerator: () -> SKSpriteNode ,
+        waitingTimeGenerator: () -> Double,
+        speed: Double){
         let actions = [
             SKAction.waitForDuration(waitingTimeGenerator()),
             SKAction.runBlock({
@@ -177,14 +162,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
                 let asset = assetGenerator()
                 switch asset {
                 case let e as Enemy : e.delegate = self
-                default: println("no enemy to delegate to")
+                default: asset.physicsBody = SKPhysicsBody(rectangleOfSize: asset.size);
+                    let p = asset.physicsBody
+
+                    p.collisionBitMask = 0
+                    p.categoryBitMask = 0
+                    p.contactTestBitMask = 0
+                    p.friction = CGFloat(0)
+                p.mass = CGFloat(0)
+                p.linearDamping = CGFloat(0)
                 }
                 let point = self.generateRandPoinOnTopOfScreenForSprite(asset)
                 asset.position = point
                 //let monsterPointInContentCoordinates = self.contentNode?.convertPoint(monsterPoint, fromNode: self)
                 
                 self.addChild(asset)
-                asset.physicsBody.applyImpulse(CGVectorMake(0.0, -10.0))
+                asset.physicsBody.applyImpulse(CGVectorMake(0.0, CGFloat(-speed)))
                 })]
         runAction( SKAction.repeatActionForever(SKAction.sequence(actions)) )
     }
