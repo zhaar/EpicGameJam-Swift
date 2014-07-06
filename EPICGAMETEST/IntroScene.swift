@@ -60,12 +60,17 @@ func transitionner(view: SKView){
     view.presentScene(GameScene.sceneWithSize(view.frame.size), transition: transition)
 }
 
+func レベル2(view:SKView){
+    let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1)
+    view.presentScene(GameScene2.sceneWithSize(view.frame.size), transition: transition)
+}
+
 func level1Intro(size: CGSize) -> TextScene {
     return TextScene(size: size, bgName: "background_intro", textName: "script_intro", transitionner)
 }
 
 func level2Intro(size: CGSize) -> TextScene {
-    return TextScene(size: size, bgName: "background_intro2", textName: "script_level2", transitionner)
+    return TextScene(size: size, bgName: "background_intro2", textName: "script_level2", レベル2)
 }
 
 func level2Story(size: CGSize) -> TextScene {

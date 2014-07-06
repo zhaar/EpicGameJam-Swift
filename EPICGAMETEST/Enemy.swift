@@ -19,6 +19,7 @@ class Enemy : SKSpriteNode {
     var delegate : EnemyDelegate?
     var hitPoints:Int = 20
 
+    var activated:Bool = false
     
     func hit(){
         hitPoints = hitPoints - 1
@@ -73,6 +74,10 @@ class Enemy : SKSpriteNode {
         ]
         runAction(SKAction.sequence(actions))
     }
+    func activate(){
+        activated = true;
+        self.removeAllActions()
+    }
 }
 
 func makeSquidEnemy() -> Enemy {
@@ -100,12 +105,17 @@ func makeEnemy(withIndex i:Int) -> Enemy {
 
 func getHpForIndex(index: Int) -> Int{
     switch index {
-    case 0, 1, 2, 3, 4, 5: return 10
-    default: return 20
+    case index < 5: return 5
+    case index < 10: return 10
+    case 11: return 100
+    default: return 10
     }
 }
 
 func makeRandomEnemy() -> Enemy {
-    return makeEnemy(withIndex: Int(rand() % 6) + 1)
+    return makeEnemy(withIndex: Int(rand() % 3))
+}
 
+func makeFlyingEnemy() -> Enemy {
+    return makeEnemy(withIndex: Int(rand() % 3) + 7)
 }

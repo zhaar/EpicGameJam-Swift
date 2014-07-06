@@ -11,8 +11,17 @@ import Foundation
 import AVFoundation
 import AudioToolbox
 
+func clamp(min: CGFloat, max: CGFloat, value: CGFloat) -> CGFloat {
+    if( value > max ) {
+        return max
+    } else if( value < min ) {
+        return min
+    } else {
+        return value
+    }
+}
 
-class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate {
     
     var missiles:Array<SKSpriteNode>
 
@@ -74,7 +83,7 @@ class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate
             placeRandomMonster()
         }*/
         
-        generateEntityContinuously(makeFlyingEnemy, waitingTimeGenerator: {2}, speed: 120.0)
+        generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 120.0)
         generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
         self.addChild(scoreLabel)
         self.addChild(secondsRemaningLabel)
@@ -320,6 +329,16 @@ class GameScene2: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate
             // TODO reduce ship life
 
         }
+
+//        switch bodyA.node {
+//        case let monster as Enemy :
+//            bodyB.node.removeFromParent()
+//            
+//            let diff = ship.position - monster.position
+//            monster.shootInDirection(CGVectorMake(diff.x * 0.1, diff.y * 0.1))
+//            monster.hit()
+//        default: println(bodyA.description)
+//        }
     }
     
     // --- Enemy delegate methods ---
