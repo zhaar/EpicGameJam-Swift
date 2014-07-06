@@ -113,7 +113,7 @@ func getHpForIndex(index: Int) -> Int{
 }
 
 func makeRandomEnemy() -> Enemy {
-    return makeEnemy(withIndex: Int(rand() % 3))
+    return makeEnemy(withIndex: Int(rand() % 3) + 1)
 }
 
 func makeFlyingEnemy() -> Enemy {
