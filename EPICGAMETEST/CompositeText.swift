@@ -28,7 +28,7 @@ class CompositeText: SKNode{
     
     func displayNext(fade: NSTimeInterval) -> Bool{
         if currentIndex < labels.count {
-            labels[currentIndex].runAction(SKAction.fadeAlphaTo(1, duration: 0))
+            labels[currentIndex].runAction(SKAction.fadeAlphaTo(1, duration: fade))
             if ++currentIndex < labels.count {
                 if labels[currentIndex].text.hasSuffix(".") {
                     return displayNext(fade)

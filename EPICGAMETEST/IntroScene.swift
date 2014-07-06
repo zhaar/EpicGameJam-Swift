@@ -33,9 +33,9 @@ class TextScene: SKScene {
     
     override func didMoveToView(view: SKView!) {
         let lines = loadText(textName)!
+        self.addChild(bgSprite)
         labels = CompositeText(lines: lines, scene: self)
         
-        self.addChild(bgSprite)
         bgSprite.runAction(SKAction.sequence(
             [SKAction.fadeAlphaTo(1, duration: fadeInDuration),
                 SKAction.waitForDuration(displayDuration),
@@ -43,11 +43,12 @@ class TextScene: SKScene {
                     {println("running block");
                         self.labels.displayNext(1)}
                 ),
-                SKAction.fadeAlphaTo(0.2, duration: 10)
+                SKAction.fadeAlphaBy(-0.2, duration: 2)
             ]))
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        if bgSprite.alpha > 0.2 { bgSprite.runAction(SKAction.fadeAlphaBy(-0.2, duration: 2))}
         if !labels.displayNext(1) {
             endOfTextCallback(self.view)
         }
@@ -59,10 +60,10 @@ func transitionner(view: SKView){
     view.presentScene(GameScene.sceneWithSize(view.frame.size), transition: transition)
 }
 
-func makeIntroScene(size: CGSize) -> TextScene {
+func level1Intro(size: CGSize) -> TextScene {
     return TextScene(size: size, bgName: "background_intro", textName: "script_intro", transitionner)
 }
 
 func level2Intro(size: CGSize) -> TextScene {
-    return TextScene(size: size, bgName: "background_forest", textName: "script_level2", transitionner)
+    return TextScene(size: size, bgName: "background_intro2", textName: "script_level2", transitionner)
 }
