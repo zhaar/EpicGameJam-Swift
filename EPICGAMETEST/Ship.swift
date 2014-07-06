@@ -16,6 +16,10 @@ protocol ShipDelegate {
 
 class Ship: SKSpriteNode {
     
+    @lazy var lastTimeRanUpdateLoop: NSTimeInterval = {
+        return CFAbsoluteTimeGetCurrent()
+    }()
+    
     var isShooting = false
     
     var delegate:ShipDelegate?
@@ -24,9 +28,6 @@ class Ship: SKSpriteNode {
     
     func startShooting() {
         isShooting = true
-
-        laserSprite.yScale = 200
-        //self.addChild(laserSprite)
     }
     
     func stopShooting(){
@@ -46,10 +47,17 @@ class Ship: SKSpriteNode {
         missileSprite.physicsBody.contactTestBitMask = monsterCategory
         missileSprite.physicsBody.pinned = false
         
-        
         missileSprite.physicsBody.applyImpulse(CGVectorMake(0, 10))
         
         self.delegate?.shipLaunchedMissile(self, missile: missileSprite)
+    }
+    
+    func update(currentTime: NSTimeInterval)
+    {
+        var deltaTime = lastTimeRanUpdateLoop - currentTime
+        if (deltaTime > 0.2 && isShooting) {
+            shootMissile()
+        }
     }
 }
 
@@ -71,3 +79,5 @@ func placeInScene(ship: Ship, scene: SKScene) {
     
     scene.addChild(ship)
 }
+
+

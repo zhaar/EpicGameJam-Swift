@@ -132,13 +132,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         firstTouch = touch.locationInNode(self)
         
         originalPosition = ship.position
+        ship.startShooting()
+        
         //ship.shootMissile()
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
         var touch : UITouch! =  touches.anyObject() as UITouch
         var diff = touch.locationInNode(self) - firstTouch!
-        ship.shootMissile()
+        //ship.shootMissile()
         var moveToPosition : CGPoint = diff + originalPosition!
         
         moveToPosition.x = clamp(0.0 + ship.frame.width * 0.5, self.size.width - ship.frame.width * 0.5, moveToPosition.x)
@@ -148,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        //ship.stopShooting()
+        ship.stopShooting()
     }
     
     // ----- Monster generation -----
@@ -250,6 +252,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
     
     override func update(currentTime: NSTimeInterval)
     {
+        ship.update(currentTime)
         removeMissilesThatAreOutOfBounds()
     }
     
