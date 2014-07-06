@@ -52,9 +52,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         ship.delegate = self
 
         self.scoreLabel = SKLabelNode(fontNamed: "Courier")
-        scoreLabel.position = CGPointMake(160, 20)
+        scoreLabel.position = CGPointMake(300, 10)
         scoreLabel.text = score.description
-        self.addChild(scoreLabel)
+        scoreLabel.fontColor = SKColor.blueColor()
+        scoreLabel.fontSize = 15
+        
         setupLevelNode()
         
         placeInScene(ship, self)
@@ -70,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, EnemyDelegate, ShipDelegate 
         
         generateEntityContinuously(makeRandomEnemy, waitingTimeGenerator: {2}, speed: 120.0)
         generateEntityContinuously(makeCloud, waitingTimeGenerator: {1.3}, speed: 100)
-        
+        self.addChild(scoreLabel)
         self.userInteractionEnabled = true
     }
     
