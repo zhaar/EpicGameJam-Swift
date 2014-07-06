@@ -67,3 +67,7 @@ func level1Intro(size: CGSize) -> TextScene {
 func level2Intro(size: CGSize) -> TextScene {
     return TextScene(size: size, bgName: "background_intro2", textName: "script_level2", transitionner)
 }
+
+func level2Story(size: CGSize) -> TextScene {
+    return TextScene(size: size, bgName: "background_intro", textName: "script_story1", transitionner)
+}

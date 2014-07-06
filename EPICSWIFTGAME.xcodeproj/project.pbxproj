@@ -47,6 +47,8 @@
 		959180E719696DF1008EBB3B /* hitbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 959180E619696DF1008EBB3B /* hitbox.png */; };
 		959180EA19697A41008EBB3B /* background_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = 959180E819697A41008EBB3B /* background_intro2.png */; };
 		959180EB19697A41008EBB3B /* background_intro2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 959180E919697A41008EBB3B /* background_intro2@2x.png */; };
+		959180ED19697E30008EBB3B /* story2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 959180EC19697E30008EBB3B /* story2.txt */; };
+		959180EF19697E4D008EBB3B /* story1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 959180EE19697E4D008EBB3B /* story1.txt */; };
 		95F693D31967101C00EA05B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D21967101C00EA05B4 /* AppDelegate.swift */; };
 		95F693D51967101C00EA05B4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95F693D41967101C00EA05B4 /* GameScene.sks */; };
 		95F693D71967101C00EA05B4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F693D61967101C00EA05B4 /* GameScene.swift */; };
@@ -117,6 +119,8 @@
 		959180E619696DF1008EBB3B /* hitbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hitbox.png; sourceTree = "<group>"; };
 		959180E819697A41008EBB3B /* background_intro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_intro2.png; sourceTree = "<group>"; };
 		959180E919697A41008EBB3B /* background_intro2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_intro2@2x.png"; sourceTree = "<group>"; };
+		959180EC19697E30008EBB3B /* story2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story2.txt; sourceTree = "<group>"; };
+		959180EE19697E4D008EBB3B /* story1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story1.txt; sourceTree = "<group>"; };
 		95F693CD1967101C00EA05B4 /* EPICSWIFTGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPICSWIFTGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F693D11967101C00EA05B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F693D21967101C00EA05B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 			children = (
 				95FAE0A7196887FC0083B21B /* script_intro.txt */,
 				95FAE0B21968C6D30083B21B /* script_level2.txt */,
+				959180EC19697E30008EBB3B /* story2.txt */,
+				959180EE19697E4D008EBB3B /* story1.txt */,
 			);
 			name = scripts;
 			sourceTree = "<group>";
@@ -397,6 +403,7 @@
 				84F88B5A196859D800BE41D8 /* monster5@2x.png in Resources */,
 				959180E719696DF1008EBB3B /* hitbox.png in Resources */,
 				84F88B7A1968B18B00BE41D8 /* fusee@2x.png in Resources */,
+				959180EF19697E4D008EBB3B /* story1.txt in Resources */,
 				95F693DC1967101C00EA05B4 /* Main.storyboard in Resources */,
 				84F88B771968B0FF00BE41D8 /* background_intro@2x.png in Resources */,
 				84F88B481968482A00BE41D8 /* Death5.wav in Resources */,
@@ -407,6 +414,7 @@
 				84F88B57196859D800BE41D8 /* monster2@2x.png in Resources */,
 				95FAE0B01968C6A20083B21B /* background_forest@2x.png in Resources */,
 				84F88B6619685A3800BE41D8 /* laser_munition@2x.png in Resources */,
+				959180ED19697E30008EBB3B /* story2.txt in Resources */,
 				845659121967FA29001E0CF6 /* laser.png in Resources */,
 				84F88B701968663000BE41D8 /* spark.png in Resources */,
 				84F88B6F1968663000BE41D8 /* Explosion.sks in Resources */,
